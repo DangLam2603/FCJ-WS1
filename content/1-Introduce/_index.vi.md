@@ -8,8 +8,6 @@ pre : " <b> 1. </b> "
 **Session Manager** là một chức năng nằm trong dịch vụ System Manager của AWS, Session Manager cung cấp khả năng quản lý các máy chủ một cách an toàn mà **không cần mở port SSH, không cần Bastion Host hoặc quản lý SSH key**. 
 Session Manager cũng giúp dễ dàng tuân thủ các chính sách của công ty yêu cầu quyền truy cập có kiểm soát, đảm bảo việc bảo mật nghiêm ngặt và ghi log truy việc truy cập trong khi vẫn cung cấp cho người dùng cuối quyền truy cập đa nền tảng.
 
-![Three tier example](/images/Elastic%20Beanstalk.png)
-
 Với việc sử dụng Session Manager, bạn sẽ có được những ưu điểm sau:
 
 - Không cần phải mở cổng 22 cho giao thức SSH.
