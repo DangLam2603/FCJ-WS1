@@ -7,7 +7,7 @@ pre : " <b> 1. </b> "
 ---
 **Session Manager** is a function within the AWS System Manager service, SSM provides verifiable and secure version management without opening incoming ports, without Bastion Host or SSH key management. Session Manager also makes it easy to comply with corporate policies that require controlled access to instances, strict security practices, and fully auditable logs with instance access details, while still providing end-users with one-click cross-platform access to your managed instances.
 
-![Three tier example](/images/Elastic%20Beanstalk.png)
+![Three tier example](/images/arc-01.png)
 
 By using Session Manager, you get the following advantages that traditional methods do not have:
 
