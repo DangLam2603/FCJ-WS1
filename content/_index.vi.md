@@ -1,28 +1,22 @@
 ---
-title : "Triển khai fullstack app với kiến trúc ba tầng"
+title : "Session Management"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 ---
+# Làm việc với Amazon System Manager - Session Manager
 
-# Triển khai fullstack app với kiến trúc ba tầng
+### Tổng quan
 
-#### Tổng quan
+ Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Amazon System Manager - Session Management. Thực hành tạo kết nối đến máy chủ public và máy chủ private trong VPC.
 
-Trong bài workshop này, chúng ta sẽ cùng nhau triển khai fullstack app (Spring Boot, React, MySQL) với kiến trúc ba tầng. Tìm hiểu các khái niệm, các tính năng của từng dịch vụ được sử dụng trong kiến trúc.
+![ConnectPrivate](/images/arc-log.png) 
 
+### Nội dung
 
-![Architecture diagram](/workshop01-AWS-FCJ-2024/images/1-Introduce/workshop01-white.png?width=60pc)
-
-#### Nội dung
-
-1. [Giới thiệu](1-introduce/)
-2. [Các bước chuẩn bị](2-PreparationSteps/)
-3. [Tạo database với RDS ](3-CreateDbWithRDS/) 
-4. [Triển khai App tier](4-DeployAppTier/)
-5. [Tạo Internal LB và ASG](5-CreateInternalLbAndASG/)
-6. [Triển khai Web tier](6-DeployWebTier/)
-7. [Tạo External LB và ASG](7-CreateExternalLbAndASG/)
-8. [Demo web sau khi deploy thành công](8-DemoWeb/)
-9. [Dọn dẹp tài nguyên](9-CleanUpResources/)
-
+ 1. [Giới thiệu](1-introduce/)
+ 2. [Các bước chuẩn bị](2-Prerequiste/)
+ 3. [Tạo kết nối đến máy chủ EC2](3-Accessibilitytoinstance/)
+ 4. [Quản lý session logs](4-s3log/)
+ 5. [Port Forwarding](5-Portfwd/)
+ 6. [Dọn dẹp tài nguyên](6-cleanup/)

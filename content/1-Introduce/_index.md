@@ -1,23 +1,22 @@
 ---
-title : "Introduction New One Test"
+title : "Introduction"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 pre : " <b> 1. </b> "
 ---
+**Session Manager** is a function within the AWS System Manager service, SSM provides verifiable and secure version management without opening incoming ports, without Bastion Host or SSH key management. Session Manager also makes it easy to comply with corporate policies that require controlled access to instances, strict security practices, and fully auditable logs with instance access details, while still providing end-users with one-click cross-platform access to your managed instances.
+![Three tier example](/images/Elastic%20Beanstalk.png)
 
-## Introduction to three-tier architecture
+By using Session Manager, you get the following advantages that traditional methods do not have:
 
-**Lam Minh dang** is the most popular implementation of a multi-tier architecture and consists of a single presentation tier, logic tier, and data tier. The following illustration shows an example of a simple, generic three-tier application.
-
-![Three tier example](/static/images/1-Introduce/Elastic%20Beanstalk.png)
-
-**Three-tier architecture includes**:
-- Presentation tier / Web Tier: interface layer so users can interact directly (eg: website or mobile application UI).
-- Logic tier / App tier: layer to process logic and execute user commands.
-- Data tier: data storage layer of the app.
-
-**Advantages of implementing three-tier architecture:**
-- Modularity: this architecture helps us modularize the app into independent parts. This helps the dev team focus on developing each layer of the app, resulting in changes being applied as quickly as possible. In addition, it also helps recover the app faster after the server is down due to an error or disaster thanks to being able to localize and repair the faulty part.
-- High availability: because the architecture deploys applications across multiple Availability Zones, the AZs are designed so that there is no failure that affects 2 AZs at the same time (fault isolation).
-- High redundancy: AWS allows deploying a stand by or replica version of the primary database on the remaining AZ. If the main database is down, the application can still retrieve data from the replica database.
+- No need to open port 22 for SSH protocol, so it is more secure.
+- Can be configured so that the connection does not need to go outside the internet, so it is more secure.
+- No need to manage the server's private key to connect to SSH.
+- Centralized management of users using AWS IAM.
+- Access to the server easily and simply with one click.
+- Faster access time than traditional methods like SSH
+- Support many different operating systems such as Linux, Windows, MacOS
+- Log the connection sessions and commands executed while connecting to the server.
+  
+With the above advantages, you can use Session Manager instead of using Bastion host technique to save us time and money when managing Bastion server. 

@@ -1,26 +1,21 @@
 ---
-title : "Deploy fullstack app with three-tier architecture"
-date : "`r Sys.Date()`"
-weight : 1
+title : "Session Management"
+date :  "`r Sys.Date()`" 
+weight : 1 
 chapter : false
 ---
+# Work with Amazon System Manager - Session Manager
 
-# Deploy fullstack app with three-tier architecture
+### Overall
+ In this lab, you'll learn the basics and practice of Amazon  System Manager - Session Manager
+. Perform creating public and private instance connections. 
 
-#### Overview
+![ConnectPrivate](/images/arc-log.png) 
 
-In this workshop, we will deploy a fullstack application (Spring Boot, React, MySQL) with three tier architecture. Then find out the definition, feature of each service used in this architecture.
-
-![Architecture diagram](/workshop01-AWS-FCJ-2024/images/1-Introduce/workshop01-white.png?width=60pc)
-
-#### Content
-
-1. [Introduction](1-introduce/)
-2. [Preparation steps](2-PreparationSteps/)
-3. [Create database with RDS ](3-CreateDbWithRDS/) 
-4. [Deploy App tier](4-DeployAppTier/)
-5. [Create Internal LB and ASG](5-CreateInternalLbAndASG/)
-6. [Deploy Web tier](6-DeployWebTier/)
-7. [Create External LB and ASG](7-CreateExternalLbAndASG/)
-8. [Demo web after successful deployment](8-DemoWeb/)
-9. [Clean up resources](9-CleanUpResources/)
+### Content
+ 1. [Introduction ](1-introduce/)
+ 2. [Preparation](2-prerequiste/)
+ 3. [Connect to EC2 instance](3-accessibilitytoinstances/)
+ 4. [Manage session logs](4-s3log/)
+ 5. [Port Forwarding](5-Portfwd/)
+ 6. [Clean up resources](6-cleanup/)
