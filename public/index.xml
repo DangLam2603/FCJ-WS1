@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Session Management on Start with Amazon VPC and AWS VPN Site-to-Site.</title>
-    <link>http://localhost:55893/FCJ-WS1/</link>
+    <link>http://localhost:56627/FCJ-WS1/</link>
     <description>Recent content in Session Management on Start with Amazon VPC and AWS VPN Site-to-Site.</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:55893/FCJ-WS1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:56627/FCJ-WS1/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
