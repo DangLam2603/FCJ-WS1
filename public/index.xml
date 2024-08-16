@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deploy Web API Application with Elastic Beanstalk and set-up CI/CD with CodePipeline, CodeBuild on Start with Amazon VPC and AWS VPN Site-to-Site.</title>
-    <link>http://localhost:61493/FCJ-WS1/</link>
+    <link>//localhost:61493/</link>
     <description>Recent content in Deploy Web API Application with Elastic Beanstalk and set-up CI/CD with CodePipeline, CodeBuild on Start with Amazon VPC and AWS VPN Site-to-Site.</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:61493/FCJ-WS1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:61493/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

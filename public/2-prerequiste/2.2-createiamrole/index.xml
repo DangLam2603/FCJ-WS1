@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Create IAM Role on Start with Amazon VPC and AWS VPN Site-to-Site.</title>
-    <link>http://localhost:61493/FCJ-WS1/2-prerequiste/2.2-createiamrole/</link>
+    <link>//localhost:61493/2-prerequiste/2.2-createiamrole/</link>
     <description>Recent content in Create IAM Role on Start with Amazon VPC and AWS VPN Site-to-Site.</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:61493/FCJ-WS1/2-prerequiste/2.2-createiamrole/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:61493/2-prerequiste/2.2-createiamrole/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
