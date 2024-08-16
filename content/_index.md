@@ -1,16 +1,15 @@
 ---
-title : "Session Management"
+title : "Deploy Web API Application with Elastic Beanstalk and set-up CI/CD with CodePipeline, CodeBuild"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 ---
-# Work with Amazon System Manager - Session Manager
+# Deploy Web API Application with Elastic Beanstalk and set-up CI/CD with CodePipeline, CodeBuild
 
 ### Overall
- In this lab, you'll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections. 
+In this hands-on workshop, you'll learn how to deploy and host a basic API application using AWS Elastic Beanstalk. We will also cover how to interact with an Amazon RDS database and build a pipeline for continuous integration and continuous delivery (CI/CD).
 
-![ConnectPrivate](/images/arc-log.png) 
+![Beanstalk Architechture](../images/beanstalk-architechture.png) 
 
 ### Content
  1. [Introduction ](1-introduce/)
