@@ -12,6 +12,8 @@ chapter : false
 
 ![CICD pipeline](/images/CICD.png) 
 
+![CICD pipeline](/images/aws-Elastic%20Beanstalk.drawio.png) 
+
 ### Content
  1. [Introduction ](1-introduce/)
  2. [Preparation](2-prerequiste/)
