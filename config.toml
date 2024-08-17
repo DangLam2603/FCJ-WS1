@@ -1,4 +1,5 @@
 # Change the default theme to be use when building the site with Hugo
+baseURL = 'https://danglam2603.github.io/' 
 theme = "hugo-theme-learn"
 
 # For search functionality
