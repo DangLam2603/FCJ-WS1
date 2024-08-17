@@ -1,23 +1,15 @@
 ---
-title : "Session Management"
+title : "Deploy an API web application with Elastic Beanstalk and set-up CI/CD using CodePipline"
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 ---
-# Work with Amazon System Manager - Session Manager
+# Deploy an APIs web application with Elastic Beanstalk and set-up CI/CD using CodePipline
 
 ### Overall
- In this lab, you'll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections. 
+ In this lab, we'll deploy a functional API application (ASP.NET 6, Swagger UI) using AWS Elastic Beanstalk, interact with AWS RDS and then set-up a pipeline for continuous integration and continuous delivery/deployment with Github and AWS CodePipeline.
 
-![CICD pipeline](/images/CICD.png) 
+![CICD pipeline](/images/architechture/CICD.png?width=60pc) 
+![ElasticBeanstalk](/images/architechture/Elastic%20Beanstalk.png?width=60pc) 
 
-![CICD pipeline](/images/aws-Elastic%20Beanstalk.drawio.png) 
 
-### Content
- 1. [Introduction ](1-introduce/)
- 2. [Preparation](2-prerequiste/)
- 3. [Connect to EC2 instance](3-accessibilitytoinstances/)
- 4. [Manage session logs](4-s3log/)
- 5. [Port Forwarding](5-Portfwd/)
- 6. [Clean up resources](6-cleanup/)

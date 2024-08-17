@@ -20,3 +20,4 @@ Với việc sử dụng Session Manager, bạn sẽ có được những ưu đ
 - Log lại được các phiên kết nối và các câu lệnh đã thực thi trong lúc kết nối tới server.
 
 Với những ưu điểm trên, bạn có thể sử dụng Session Manager thay vì sử dụng kỹ thuật Bastion host giúp chúng ta tiết kiệm được thời gian và chi phí khi quản lý server Bastion.
+
