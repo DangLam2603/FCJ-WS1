@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3.4 </b> "
 ---
 
-## Overview 
+#### Overview 
 
 {{% notice warning %}}
 To further enhance the scalability, availability, and fault tolerance of the application, integrating an Auto Scaling Group (ASG) and a Load Balancer can be **considered**. These components are particularly beneficial for applications that **require high availability** and the ability to handle **varying levels of traffic**.

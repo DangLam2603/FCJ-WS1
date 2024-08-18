@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3.1 </b> "
 ---
 
-## Overview
+#### Overview
 Before proceeding with the setup of **AWS Elastic Beanstalk**, it's essential to first configure a new environment to ensure that the deployment process runs smoothly.
 
 1. Navigate to **AWS Console UI** and search **Elastic Beanstalk**

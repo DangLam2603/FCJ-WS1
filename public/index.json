@@ -1,10 +1,17 @@
 [
 {
-	"uri": "//localhost:1313/",
-	"title": "Deploy an API web application with Elastic Beanstalk and set-up CI/CD using CodePipline",
+	"uri": "//localhost:1313/6-codebuild/6.1-add-buildspec-and-profile/",
+	"title": "Create Buildspect and Procfile",
 	"tags": [],
 	"description": "",
-	"content": "Deploy an APIs web application with Elastic Beanstalk and set-up CI/CD using CodePipline Overall In this lab, we\u0026rsquo;ll deploy a functional API application (ASP.NET 6, Swagger UI) using AWS Elastic Beanstalk, interact with AWS RDS and then set-up a pipeline for continuous integration and continuous delivery/deployment with Github and AWS CodePipeline.\n"
+	"content": "Overview Creating a buildspec.yml file and a Procfile.txt is essential for automating and managing the build, deployment, and runtime configuration of your application. Each serves a distinct purpose in the software development lifecycle, particularly when using AWS services like CodeBuild and Elastic Beanstalk\nbuildspec.yml: This file defines the build process for AWS CodeBuild. It includes phases for installing dependencies, compiling code, running tests, and packaging the application. Customize it by specifying build commands, environment variables, and artifact locations to match your project’s needs. Procfile: Used primarily in platforms like AWS Elastic Beanstalk, the Procfile specifies the commands to start various application processes, such as web servers or worker processes. Define the types of processes and their corresponding startup commands to ensure the application runs correctly. After that commit your code to your own repository on Github and let\u0026rsquo;s get started with CodeBuild\nIn the source code folder, two deployment files have been included to facilitate the deployment process. These files are essential for automating the build and deployment of the application. However, you may choose to create and modify these files according to specific requirements or preferences\n"
+},
+{
+	"uri": "//localhost:1313/6-codebuild/6.2--create-codebuild-project/",
+	"title": "Create CodeBuild Project",
+	"tags": [],
+	"description": "",
+	"content": "Overview AWS CodeBuild is a managed service that automates code compilation, testing, and artifact creation. It scales automatically and integrates with other AWS services, using a buildspec.yml file to configure build commands and settings.\nNavigate to the CodeBuild section on the AWS console UI Choose Create Project In the Project Configuration, enter Project Name you want In the Source section, select Source provider Connect to your Github account Choose the repository from your Github repo Config the environment In the Operating Sytems section, choose your OS Leave the Runtime(s) as default : Standard Runtime In the Image section, select the latest runtime Select new service role Enter role name Select Buildspec option to use the provided buildspec.yml file Enter Create New Project Result "
 },
 {
 	"uri": "//localhost:1313/3-deploy-web-application/3.1-create-environment-ebs/",
@@ -14,6 +21,27 @@
 	"content": "Overview Before proceeding with the setup of AWS Elastic Beanstalk, it\u0026rsquo;s essential to first configure a new environment to ensure that the deployment process runs smoothly.\nNavigate to AWS Console UI and search Elastic Beanstalk Choose New Environment In the Environment Information, fill in Environment name you want You can choose the Domain Name you want, though it is optional. Ensure that you check the availability of the domain name.\nAfter that, select the platform, platform version and branch you want to deploy, in this tutorial will use .NET 6 on Linux In the Presets, choose High avalibility. This step allows users to efficiently set up their environment based on their specific needs, whether opting for a simple single-instance setup (potentially eligible for the free tier) or a more robust high-availability configuration. In the Application Code section, you can choose either to use the sample code for a basic deployment or to upload your own code from an S3 Bucket.\n"
 },
 {
+	"uri": "//localhost:1313/7-create-cicd-pipeline/7.1-create-new-pipeline/",
+	"title": "Create New Pipline",
+	"tags": [],
+	"description": "",
+	"content": "Overview First, we will proceed with a comprehensive, step-by-step approach to create our CI/CD pipeline using AWS CodePipeline. This process involves several key stages: beginning with the creation of the pipeline itself, where we will specify the pipeline name and configure the necessary permissions\nOpen the AWS Management Console and navigate to CodePipeline. Click Create pipeline Provide a name for your pipeline name. Choose Next, to following to next page. "
+},
+{
+	"uri": "//localhost:1313/9-cleanup/9.1-delete-elasticbeanstalk/",
+	"title": "Delete Elastic Beanstalk",
+	"tags": [],
+	"description": "",
+	"content": "Clean-up Elastic Beanstalk Select the Elastic Beanstalk Environment =\u0026gt; Action =\u0026gt; Terminate Environment Enter the Environment Name Ebs-player-apis-env to delete "
+},
+{
+	"uri": "//localhost:1313/",
+	"title": "Deploy an API web application with Elastic Beanstalk and set-up CI/CD using CodePipline",
+	"tags": [],
+	"description": "",
+	"content": "Deploy an APIs web application with Elastic Beanstalk and set-up CI/CD using CodePipline Overall In this lab, we\u0026rsquo;ll deploy a functional API application (ASP.NET 6, Swagger UI) using AWS Elastic Beanstalk, interact with AWS RDS and then set-up a pipeline for continuous integration and continuous delivery/deployment with Github and AWS CodePipeline.\n"
+},
+{
 	"uri": "//localhost:1313/1-introduce/1.1-elasticbeanstalk/",
 	"title": "Introduce to Elastic Beanstalk",
 	"tags": [],
@@ -21,11 +49,18 @@
 	"content": "Overview Elastic Beanstalk is a fully managed service provided by Amazon Web Services (AWS) that simplifies the deployment and management of applications. It allows developers to quickly deploy and manage applications in various languages such as Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers like Apache, Nginx, Passenger, and IIS.\nWith Elastic Beanstalk, you simply upload your code, and the service automatically handles the deployment, from capacity provisioning, load balancing, and auto-scaling to application health monitoring. This frees developers from dealing with infrastructure management, letting them focus on writing code.\nElastic Beanstalk Advantage\nSimplified Deployment: Easy to deploy applications without managing infrastructure. Automatic Scaling: Automatically scales applications based on demand. Built-In Monitoring: Integrated with AWS CloudWatch for real-time health monitoring. Multi-Language Support: Supports various programming languages and platforms. Customizable Environments: Flexibility to customize the environment as needed. Version Control: Easy version management with rollback capabilities. Cost-Effective: Pay only for the resources used, no additional cost for Elastic Beanstalk. AWS Integration: Seamless integration with other AWS services. "
 },
 {
-	"uri": "//localhost:1313/4-config-rds/4.1-updateiamrole/",
-	"title": "Update IAM Role",
+	"uri": "//localhost:1313/4-config-rds/4.1-modify-connection/",
+	"title": "Modify Connection String and Inbound Rule",
 	"tags": [],
 	"description": "",
-	"content": "For our EC2 instances to be able to send session logs to the S3 bucket, we will need to update the IAM Role assigned to the EC2 instance by adding a policy that allows access to S3.\nUpdate IAM Role Go to IAM service management console Click Roles. In the search box, enter SSM. Click on the SSM-Role role. Click Attach policies. In the Search box enter S3. Click the policy AmazonS3FullAccess. Click Attach policy. In the production environment, we will grant stricter permissions to the specified S3 bucket. In the framework of this lab, we use the policy AmazonS3FullAccess for convenience.\nNext, we will proceed to create an S3 bucket to store session logs.\n"
+	"content": "For our Database instances to be able to work in the AWS cloud environment, we will need to update the Connection String and create a inbound rule to connect to our local MSSQL server.\nUpdate Connection String Go to project folder and look for appsetting.json In the Connection String, look for DefaultConnection Modify the Server, uid, pwd match with the database settings in Elastic Beanstalk. Navigate to AWS RDS Database in AWS Console UI Select the database to modify Add the following Inbound rule Next, we will proceed to migration an test our database to local MSSQL Server.\n"
+},
+{
+	"uri": "//localhost:1313/5-publish-api/5.1-publish-to-elasticbeanstalk/",
+	"title": "Publish To Elastic Beanstalk",
+	"tags": [],
+	"description": "",
+	"content": "\rIn order to publish, make sure your IDE have been installed the AWS ToolKit in the prerequiste step.\nNavigate to your project directory, then right click chooose the publish to AWS Choose Publish to Existing Target Select the Elastic Beanstalk Environment you have been created Choose Publish and then Yes Wait for AWS Toolkit to pulish to Elastic Beanstalk. Publish Sucessfull "
 },
 {
 	"uri": "//localhost:1313/1-introduce/1.2-pipeline/",
@@ -56,11 +91,25 @@
 	"content": "Create IAM Role For Elastic Beanstalk Navigate to AWS Console and search for IAM Select Role from left side bar and choose Create role Choose Trusted Service Select EC2 Add the following permision AWSElasticBeanstalkWebTier Enter Role name Choose Create Role "
 },
 {
-	"uri": "//localhost:1313/4-config-rds/4.2-creates3bucket/",
-	"title": "Create S3 Bucket",
+	"uri": "//localhost:1313/7-create-cicd-pipeline/7.2-source-stage/",
+	"title": "Create Source Stage",
 	"tags": [],
 	"description": "",
-	"content": "In this step, we will create an S3 bucket to store session logs sent from EC2 instances.\nCreate S3 Bucket Access S3 service management console Click Create bucket. At the Create bucket page. In the Bucket name field, enter the bucket name lab-yourname-bucket-0001 In the Region section, select Region you are doing the current lab. The name of the S3 bucket must not be the same as all other S3 buckets in the system. You can substitute your name and enter a random number when generating the S3 bucket name.\nScroll down and click Create bucket. When we created the S3 bucket we did Block all public access so our EC2 instances won\u0026rsquo;t be able to connect to S3 via the internet. In the next step, we will configure the S3 Gateway Endpoint feature to allow EC2 instances to connect to the S3 bucket via the VPC\u0026rsquo;s internal network.\n"
+	"content": "Overview Next, to integrate GitHub with AWS CodePipeline, you\u0026rsquo;ll connect your GitHub repository as the source in the pipeline configuration\nChoose Source Provider Authorizing CodePipeline to access your GitHub account Selecting the repository and branch to monitor "
+},
+{
+	"uri": "//localhost:1313/9-cleanup/9.2-delete-code-build/",
+	"title": "Delete CodeBuild Project",
+	"tags": [],
+	"description": "",
+	"content": "Clean-up CodeBuild Project Select the CodeBuild Project =\u0026gt; Action =\u0026gt; Delete To confirm deletion, enter delete to delete Deletion success "
+},
+{
+	"uri": "//localhost:1313/5-publish-api/5.2-demo-web-api-success/",
+	"title": "Demo And Test APIs",
+	"tags": [],
+	"description": "",
+	"content": "\rTo validate the deployment of our APIs, initiate by obtaining the URL associated with our Elastic Beanstalk domain. The API utilizes Swagger UI for the documentation and interaction with endpoints. To access the comprehensive list of available endpoints, append ../swagger/index.html to the base URL of the domain.\nCopy and paste the domain URL ebs-player-apis-dev.ap-southeast-1.elasticbeanstalk.com/swagger/index.html Deploy sucessfully and test the APIs working with the hosted RDS database. Your API is now hosted on the AWS Cloud utilizing the Elastic Beanstalk environment, with a fully integrated RDS database. You can access the API and develop a fully functional web application for your backend, all seamlessly deployed on the AWS Cloud with robust database support from Amazon RDS.\n"
 },
 {
 	"uri": "//localhost:1313/2-prerequiste/2.3-download-aws-toolkit/",
@@ -77,6 +126,13 @@
 	"content": "First, let go through some defination about our main AWS services Elastic Beanstalk and CodePipeline, CodeBuild to understand how continuous integration and continuous delivery/deployment works.\nContent Elastic Beanstalk CI/CD using CodePipelne, CodeBuild "
 },
 {
+	"uri": "//localhost:1313/4-config-rds/4.2-test-connection/",
+	"title": "Migration and test database connection",
+	"tags": [],
+	"description": "",
+	"content": "Migration In this workshop tutorial, i already provide the script of database. But you can crerate any SQL script in future deployment which fit the best.\nTest Connection Input your RDS server, Username, Password that you config in Elastic Beanstalk Migration and Refresh the server "
+},
+{
 	"uri": "//localhost:1313/2-prerequiste/2.4-add-inbound-rule/",
 	"title": "Modify Inbound Rule",
 	"tags": [],
@@ -91,18 +147,25 @@
 	"content": "In this section, we will setup the necessary and important things to perform this workshop.\nContent Clone Code From GitHub Create IAM Role Download AWS ToolKit Add Inbound Rule "
 },
 {
-	"uri": "//localhost:1313/4-config-rds/4.3-creategwes3/",
-	"title": "Create S3 Gateway endpoint",
+	"uri": "//localhost:1313/7-create-cicd-pipeline/7.3-build-stage/",
+	"title": "Create Build Stage",
 	"tags": [],
 	"description": "",
-	"content": " Go to VPC service management console Click Endpoints. Click Create endpoint. At the Create endpoint page. In the Name tag field, enter S3GW. In the Service Category section, click AWS services. In the search box enter S3, then select com.amazonaws.[region].s3 In the Services section, select com.amazonaws.[region].s3 with the Type of Gateway. In the VPC section, select Lab VPC. In the Route tables section, select both route tables. Scroll down, click Create endpoint. The next step is to configure Session Manager to store session logs to the S3 bucket we created.\n"
+	"content": "Overview In the build stage of AWS CodePipeline, you\u0026rsquo;ll configure the process that compiles your source code, runs tests, and packages the application. This stage typically involves integrating with AWS CodeBuild or another build service.\nSet-up Build Provider using exiting CodeBuild project. Choose the Codebuild Project or you can create new one. "
+},
+{
+	"uri": "//localhost:1313/9-cleanup/9.3-delete-code-pipline/",
+	"title": "Delete CodePipeline",
+	"tags": [],
+	"description": "",
+	"content": "Clean-up CodePipeline Select the CodePipeline pipeline =\u0026gt; Delete Pipeline To confirm deletion, enter delete to delete Deletion success ![select] "
 },
 {
 	"uri": "//localhost:1313/3-deploy-web-application/",
 	"title": "Deploy Web Application With Elastic Beanstalk",
 	"tags": [],
 	"description": "",
-	"content": "Once the prerequisites are set up, we\u0026rsquo;ll proceed with deploying our web API to the cloud using AWS Elastic Beanstalk. In this step, we\u0026rsquo;ll create an Elastic Beanstalk environment for deployment and connect through AWS ToolKit to upload our code from GitHub.\n"
+	"content": "Once the prerequisites are set up, we\u0026rsquo;ll proceed with deploying our web API to the cloud using AWS Elastic Beanstalk. In this step, we\u0026rsquo;ll create an Elastic Beanstalk environment for deployment and connect through AWS ToolKit to upload our code from GitHub.\nContent Create Elastic Beanstalk Envronment Configure Server Access Setttings Database, VPC Config Traffic and Scaling Create Envronment Variable Review Settings Test Application "
 },
 {
 	"uri": "//localhost:1313/3-deploy-web-application/3.3-setting-database-vpc/",
@@ -112,25 +175,25 @@
 	"content": "Overview Next, we\u0026rsquo;ll configure VPC and create new RDS database to host our SQL Server to cloud.\nSelect the exiting or Create new Vitural Private Cloud (VPC). In this demo, i\u0026rsquo;ll choose the default VPC. Choose the Avalibility Zone you want to run your application. Select your database subnets and enable database Modify the following:\nEngine : the engine of your database (in this workshop i\u0026rsquo;ll use SQL Server) Engine Version : version of database Instance class : instance type of database Storage : database storage Username : the username of database (key to connect to database) Password : the password of database (key to connect to database) Enter Next "
 },
 {
+	"uri": "//localhost:1313/4-config-rds/",
+	"title": "Configure RDS database connection",
+	"tags": [],
+	"description": "",
+	"content": "Let\u0026rsquo;s go through and learn how to connect to our deployed RDS database into our local MSSQL server\nContent: Modify Connection String and Inbound Rule Test Databasbe Connection "
+},
+{
+	"uri": "//localhost:1313/7-create-cicd-pipeline/7.4-deploy-stage/",
+	"title": "Create Deploy Stage",
+	"tags": [],
+	"description": "",
+	"content": "Overview In the deploy stage of AWS CodePipeline, you set up the process to deploy your built application to a specified environment.In this workshop, we\u0026rsquo;ll involves integrating with deployment AWS Elastic Beanstalk\nChoose the source for Deploy Provider Modify the following: Region: specific areas of your deployment zone Select the Application Name of your Elastic Beanstalk Select the Environment Name of your Elastic Beanstalk Review the following steps and enter Create Pipline "
+},
+{
 	"uri": "//localhost:1313/3-deploy-web-application/3.4-create-alb-asg/",
 	"title": "Create Load Balancer and Auto Scaling Group",
 	"tags": [],
 	"description": "",
 	"content": "Overview To further enhance the scalability, availability, and fault tolerance of the application, integrating an Auto Scaling Group (ASG) and a Load Balancer can be considered. These components are particularly beneficial for applications that require high availability and the ability to handle varying levels of traffic.\nChoose Default Security Group for your EC2 Setting Capacity for Auto Scaling Group Select Load Balancer Network Settings Select Load Balancer Type Select Instance Type "
-},
-{
-	"uri": "//localhost:1313/4-config-rds/",
-	"title": "Manage session logs",
-	"tags": [],
-	"description": "",
-	"content": "With Session Manager, we can view the history of connections to instances through Session history. However, we have not seen the details of the commands used in a session.\nIn this section, we will proceed to create an S3 bucket and configure the session logs feature to see the details of the commands used in the session.\nContent: Update IAM Role Create S3 Bucket Create S3 Gateway endpoint Configure Session logs "
-},
-{
-	"uri": "//localhost:1313/4-config-rds/4.4-configsessionlogs/",
-	"title": "Monitor session logs",
-	"tags": [],
-	"description": "",
-	"content": "Monitor session logs Access System Manager - Session Manager service management console Click the Preferences tab. Click Edit. Scroll down, at S3 logging, click Enable. Uncheck Allow only encrypted S3 buckets. Click Choose a bucket name from the list. Select the S3 bucket you created. Scroll down, click Save to save the configuration.\nAccess System Manager - Session Manager service management console\nClick Start session. Click Private Windows Instance. Click Start session. Type the command ipconfig. Type the command hostname. Click Terminate to exit the session, click Terminate again to confirm. Check Session logs in S3 Go to S3 service management console Click on the name of the S3 bucket we created for the lab. Click on the object name sessions log On the objects detail page, click Open. Object logs will be opened in a new tab in the browser. You can view the stored commands in session logs. "
 },
 {
 	"uri": "//localhost:1313/3-deploy-web-application/3.5-create-environment-variable/",
@@ -140,18 +203,25 @@
 	"content": "Overview The following step allow us to add environment variabale inside Elastic Beanstalk for security purpose\nEnabling CloudWatch Logs for Elastic Beanstalk is an essential step for monitoring and troubleshooting your application Set the following environment variables that configure the logging behavior. ASPNETCORE_ENVIRONMENT = Development (specific the dev enviroment on NET Core) ConnectionString__DefaultConnection = \u0026quot;Your Connection String\u0026quot; (add a connection to your RDS database) "
 },
 {
-	"uri": "//localhost:1313/5-publish-api/",
-	"title": "Port Forwarding",
+	"uri": "//localhost:1313/7-create-cicd-pipeline/7.5-result/",
+	"title": "Demo Pipeline Sucessfull",
 	"tags": [],
 	"description": "",
-	"content": "\rPort Forwarding is a useful way to redirect network traffic from one IP address - Port to another IP address - Port. With Port Forwarding we can access an EC2 instance located in the private subnet from our workstation.\nWe will configure Port Forwarding for the RDP connection between our machine and Private Windows Instance located in the private subnet we created for this exercise.\nCreate IAM user with permission to connect SSM Go to IAM service management console Click Users , then click Add users. At the Add user page. In the User name field, enter Portfwd. Click on Access key - Programmatic access. Click Next: Permissions. Click Attach existing policies directly.\nIn the search box, enter ssm. Click on AmazonSSMFullAccess. Click Next: Tags, click Next: Reviews. Click Create user. Save Access key ID and Secret access key information to perform AWS CLI configuration.\nInstall and Configure AWS CLI and Session Manager Plugin To perform this hands-on, make sure your workstation has AWS CLI and Session Manager Plugin installed -manager-working-with-install-plugin.html)\nMore hands-on tutorials on installing and configuring the AWS CLI can be found here.\nWith Windows, when extracting the Session Manager Plugin installation folder, run the install.bat file with Administrator permission to perform the installation.\nImplement Portforwarding Run the command below in Command Prompt on your machine to configure Port Forwarding. aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region (your region) Windows Private Instance Instance ID information can be found when you view the EC2 Windows Private Instance server details.\nExample command: C:\\Windows\\system32\u0026gt;aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region ap-southeast-1 If your command gives an error like below: SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\nProve that you have not successfully installed the Session Manager Plugin. You may need to relaunch Command Prompt after installing Session Manager Plugin.\nConnect to the Private Windows Instance you created using the Remote Desktop tool on your workstation. In the Computer section: enter localhost:9999. Return to the administration interface of the System Manager - Session Manager service. Click tab Session history. We will see session logs with Document name AWS-StartPortForwardingSession. Congratulations on completing the lab on how to use Session Manager to connect and store session logs in S3 bucket. Remember to perform resource cleanup to avoid unintended costs.\n"
+	"content": "Overview With your pipeline now configured and ready to run, it\u0026rsquo;s essential to review the setup to ensure everything is functioning correctly.\nSource Stage Build Stage Deploy Stage "
 },
 {
-	"uri": "//localhost:1313/6-cleanup/",
-	"title": "Clean up resources",
+	"uri": "//localhost:1313/5-publish-api/",
+	"title": "Publish Code To Elastic Beanstalk",
 	"tags": [],
 	"description": "",
-	"content": "We will take the following steps to delete the resources we created in this exercise.\nDelete EC2 instance Go to EC2 service management console\nClick Instances. Select both Public Linux Instance and Private Windows Instance instances. Click Instance state. Click Terminate instance, then click Terminate to confirm. Go to IAM service management console\nClick Roles. In the search box, enter SSM. Click to select SSM-Role. Click Delete, then enter the role name SSM-Role and click Delete to delete the role. Click Users. Click on user Portfwd. Click Delete, then enter the user name Portfwd and click Delete to delete the user. Delete S3 bucket Access System Manager - Session Manager service management console.\nClick the Preferences tab. Click Edit. Scroll down. In the section S3 logging. Uncheck Enable to disable logging. Scroll down. Click Save. Go to S3 service management console\nClick on the S3 bucket we created for this lab. (Example: lab-fcj-bucket-0001 ) Click Empty. Enter permanently delete, then click Empty to proceed to delete the object in the bucket. Click Exit. After deleting all objects in the bucket, click Delete\nEnter the name of the S3 bucket, then click Delete bucket to proceed with deleting the S3 bucket. Delete VPC Endpoints Go to VPC service management console Click Endpoints. Select the 4 endpoints we created for the lab including SSM, SSMMESSAGES, EC2MESSAGES, S3GW. Click Actions. Click Delete VPC endpoints. In the confirm box, enter delete.\nClick Delete to proceed with deleting endpoints. Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.\nDelete VPC Go to VPC service management console\nClick Your VPCs. Click on Lab VPC. Click Actions. Click Delete VPC. In the confirm box, enter delete to confirm, click Delete to delete Lab VPC and related resources.\n"
+	"content": "To the final step, we will upload our code to Elastic Beanstalk Environment with the support of AWS Toolkit in Visual Studio\nContent Publish To Elastic Beanstalk Demo And Test APIs "
+},
+{
+	"uri": "//localhost:1313/6-codebuild/",
+	"title": "Create CodeBuild Project",
+	"tags": [],
+	"description": "",
+	"content": "Overview Before integrating your application with AWS CodePipeline for continuous integration and continuous delivery (CI/CD), it\u0026rsquo;s crucial to ensure that your CodeBuild project is correctly configured and optimized. CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages ready for deployment\nContent Create Buildspec.yml and Procfile.txt Create CodeBuild Project "
 },
 {
 	"uri": "//localhost:1313/3-deploy-web-application/3.6-review-settings/",
@@ -161,6 +231,13 @@
 	"content": "Overview One last step ahead , before hosting your web to cloud. Let\u0026rsquo;s review all the following,\nConfigure Environment Configure Service Access Setting Network, Datbase Config Traffic and Scaling Submit and Deploy "
 },
 {
+	"uri": "//localhost:1313/7-create-cicd-pipeline/",
+	"title": "Setup CI/CD with CodePipeline",
+	"tags": [],
+	"description": "",
+	"content": "Overview To streamline web API deployment, we’ll set up a CI/CD pipeline with AWS CodePipeline. This automates building, testing, and deploying, integrating with CodeBuild and Elastic Beanstalk. Automation enhances efficiency, reduces errors, and speeds up feature delivery.\nContent Create New Pipeline Create Source Stage Create Build Stage Create Deploy Stage Demo CI/CD working "
+},
+{
 	"uri": "//localhost:1313/3-deploy-web-application/3.7-result/",
 	"title": "Test Your Application",
 	"tags": [],
@@ -168,18 +245,18 @@
 	"content": "Overview In this part, we will take a look at our site and check for deployment working.\nDeploying applications on Elastic Beanstalk can sometimes take several minutes to start, especially for complex applications or environments with multiple configurations\nEnviroment launched then check the URL working. Deployment Success "
 },
 {
-	"uri": "//localhost:1313/5-publish-api/5.1-publish-to-elasticbeanstalk/",
-	"title": "",
+	"uri": "//localhost:1313/8-demo/",
+	"title": "Demo CI/CD flow",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Overview Now, let\u0026rsquo;s demostration the continuous integration and continuous delivery workflow automates the process from code commit to deployment. When a developer commits code to a GitHub repository, AWS CodePipeline detects the change and triggers the pipeline.\nCommit new change to Github Repository CodePipeline automatically detects the latest changes New API endpoint deploy sucessfull "
 },
 {
-	"uri": "//localhost:1313/5-publish-api/5.2-demo-web-api-success/",
-	"title": "",
+	"uri": "//localhost:1313/9-cleanup/",
+	"title": "Cleanup Resource",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Overview To handle cleaning the AWS resource, determine which AWS resources are associated with your CI/CD pipeline, such as CodePipeline, CodeBuild projects, Elastic Beanstalk environments.\nContent Delete Elastic Beanstalk Delete Code Build Delete CodePipeline "
 },
 {
 	"uri": "//localhost:1313/categories/",

@@ -1,0 +1,186 @@
+USE [master]
+GO
+/****** Object:  Database [EnglishPremierLeague2024DB]    Script Date: 8/18/2024 10:11:11 AM ******/
+CREATE DATABASE [EnglishPremierLeague2024DB]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'EnglishPremierLeague2024DB', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\EnglishPremierLeague2024DB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'EnglishPremierLeague2024DB_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\EnglishPremierLeague2024DB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET COMPATIBILITY_LEVEL = 160
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [EnglishPremierLeague2024DB].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET  MULTI_USER 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET QUERY_STORE = ON
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 30), DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_STORAGE_SIZE_MB = 1000, QUERY_CAPTURE_MODE = AUTO, SIZE_BASED_CLEANUP_MODE = AUTO, MAX_PLANS_PER_QUERY = 200, WAIT_STATS_CAPTURE_MODE = ON)
+GO
+USE [EnglishPremierLeague2024DB]
+GO
+/****** Object:  Table [dbo].[FootballClub]    Script Date: 8/18/2024 10:11:12 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FootballClub](
+	[FootballClubID] [nvarchar](30) NOT NULL,
+	[ClubName] [nvarchar](100) NOT NULL,
+	[ClubShortDescription] [nvarchar](400) NOT NULL,
+	[SoccerPracticeField] [nvarchar](250) NOT NULL,
+	[Mascos] [nvarchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[FootballClubID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[FootballPlayer]    Script Date: 8/18/2024 10:11:12 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[FootballPlayer](
+	[FootballPlayerID] [nvarchar](30) NOT NULL,
+	[FullName] [nvarchar](100) NOT NULL,
+	[Achievements] [nvarchar](400) NOT NULL,
+	[Birthday] [datetime] NULL,
+	[PlayerExperiences] [nvarchar](400) NOT NULL,
+	[Nomination] [nvarchar](400) NOT NULL,
+	[FootballClubID] [nvarchar](30) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[FootballPlayerID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PremierLeagueAccount]    Script Date: 8/18/2024 10:11:12 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PremierLeagueAccount](
+	[AccID] [int] NOT NULL,
+	[Password] [nvarchar](90) NOT NULL,
+	[EmailAddress] [nvarchar](90) NULL,
+	[Description] [nvarchar](140) NOT NULL,
+	[Role] [int] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[AccID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+INSERT [dbo].[FootballClub] ([FootballClubID], [ClubName], [ClubShortDescription], [SoccerPracticeField], [Mascos]) VALUES (N'CL004465', N'Tottenham Hotspur FC', N'Tottenham Hotspur FC, based in London, has a strong legacy and a reputation for attractive football. The club has a significant following and a distinguished past.', N'The Tottenham Hotspur Training Centre serves as the club s training base.', N'Chirpy the Cockerel is the official mascot of Tottenham Hotspur FC.')
+GO
+INSERT [dbo].[FootballClub] ([FootballClubID], [ClubName], [ClubShortDescription], [SoccerPracticeField], [Mascos]) VALUES (N'CL004466', N'Chelsea FC', N'Chelsea FC is a professional football club based in Fulham, London. The club is known for its rich history, top-tier performances, and a strong presence in English football.', N'The club s official training ground is located in Cobham, Surrey, known as the Cobham Training Centre', N'The official mascot of Chelsea FC is Stamford the Lion.')
+GO
+INSERT [dbo].[FootballClub] ([FootballClubID], [ClubName], [ClubShortDescription], [SoccerPracticeField], [Mascos]) VALUES (N'CL004467', N'Manchester City FC', N'Manchester City FC, based in Manchester, is a prominent club with a successful track record in English football. The club is known for its modern infrastructure and strong squad.', N'The Etihad Campus is home to Manchester City s state-of-the-art training facilities.', N'Moonchester and Moonbeam are the official club mascots of Manchester City FC.')
+GO
+INSERT [dbo].[FootballClub] ([FootballClubID], [ClubName], [ClubShortDescription], [SoccerPracticeField], [Mascos]) VALUES (N'CL004468', N'Liverpool FC', N'Liverpool FC, based in Liverpool, is a historic club with a global fanbase. It has a rich footballing tradition and is known for its passionate supporters.', N'The AXA Training Centre serves as Liverpool FC s training facility.', N'The official club mascot of Liverpool FC is Mighty Red.')
+GO
+INSERT [dbo].[FootballClub] ([FootballClubID], [ClubName], [ClubShortDescription], [SoccerPracticeField], [Mascos]) VALUES (N'CL004469', N'Manchester United FC', N'Manchester United FC, one of the most successful clubs in English football, is based in Greater Manchester. It has a storied history and is renowned for its achievements.', N'The AON Training Complex is the primary training ground for the club.', N'Fred the Red is the official mascot of Manchester United FC.')
+GO
+INSERT [dbo].[FootballPlayer] ([FootballPlayerID], [FullName], [Achievements], [Birthday], [PlayerExperiences], [Nomination], [FootballClubID]) VALUES (N'PL00960', N'Vincent Kompany', N'Vincent Kompany was a cornerstone of Manchester City s defense, leading the team to multiple titles during his tenure.', CAST(N'1976-01-01T00:00:00.000' AS DateTime), N'Kompany s leadership and dedication made him a revered figure among fans and players at Manchester City.', N'Kompany is remembered for his strong presence on the field and his contributions to Manchester City s success.', N'CL004467')
+GO
+INSERT [dbo].[FootballPlayer] ([FootballPlayerID], [FullName], [Achievements], [Birthday], [PlayerExperiences], [Nomination], [FootballClubID]) VALUES (N'PL00961', N'Raheem Sterling', N'Raheem Sterling has been a key player for Manchester City, showcasing his skills and versatility on the field.', CAST(N'1995-01-01T00:00:00.000' AS DateTime), N'Sterling s journey at Manchester City has been characterized by growth and consistent performances.', N'Sterling has been recognized for his impact on the team and his commitment to the club.', N'CL004467')
+GO
+INSERT [dbo].[FootballPlayer] ([FootballPlayerID], [FullName], [Achievements], [Birthday], [PlayerExperiences], [Nomination], [FootballClubID]) VALUES (N'PL00962', N'Sergio Agüero', N'Sergio Agüero is a legendary figure at Manchester City, having scored crucial goals and played a pivotal role in the club s success.', CAST(N'1986-01-01T00:00:00.000' AS DateTime), N'Agüero s tenure at Manchester City has been marked by remarkable goal-scoring feats and moments of brilliance.', N'Agüero is highly regarded for his contributions to Manchester City s history.', N'CL004467')
+GO
+INSERT [dbo].[FootballPlayer] ([FootballPlayerID], [FullName], [Achievements], [Birthday], [PlayerExperiences], [Nomination], [FootballClubID]) VALUES (N'PL00963', N'Kevin De Bruyne', N'Kevin De Bruyne is a highly decorated player, known for his instrumental role in Manchester City s triumphs in the Premier League and other tournaments.', CAST(N'1990-01-01T00:00:00.000' AS DateTime), N'De Bruyne s experience and skill have made him a vital part of the Manchester City squad.', N'De Bruyne has received numerous accolades for his outstanding performances on the field.', N'CL004467')
+GO
+INSERT [dbo].[FootballPlayer] ([FootballPlayerID], [FullName], [Achievements], [Birthday], [PlayerExperiences], [Nomination], [FootballClubID]) VALUES (N'PL00964', N'Phil Foden', N'Phil Foden has been a standout player for Manchester City, contributing significantly to their successes in various competitions.', CAST(N'1989-01-01T00:00:00.000' AS DateTime), N'Foden has risen through the ranks of Manchester City s Academy to become a key player in the first team.', N'Foden has been recognized for his exceptional talent and dedication to the club.', N'CL004467')
+GO
+INSERT [dbo].[FootballPlayer] ([FootballPlayerID], [FullName], [Achievements], [Birthday], [PlayerExperiences], [Nomination], [FootballClubID]) VALUES (N'PL00965', N'John Terr', N'John Terry, a Chelsea legend, enjoyed a successful career with the club, securing numerous Premier League titles, FA Cups, and a UEFA Champions League triumph, while also earning individual honors.', CAST(N'1980-12-07T00:00:00.000' AS DateTime), N'Terry s unwavering commitment to Chelsea, exceptional defensive skills, and influential captaincy established him as a revered figure and a symbol of resilience.', N'3423', N'CL004465')
+GO
+INSERT [dbo].[FootballPlayer] ([FootballPlayerID], [FullName], [Achievements], [Birthday], [PlayerExperiences], [Nomination], [FootballClubID]) VALUES (N'PL00966', N'John Terry Dang', N'Premier League Champion 2004-2005, FA Cup Winner 2007', CAST(N'2006-07-04T00:00:00.000' AS DateTime), N'20 years of professional football experience', N'PFA Players Player of the Year 2005', N'CL004468')
+GO
+INSERT [dbo].[PremierLeagueAccount] ([AccID], [Password], [EmailAddress], [Description], [Role]) VALUES (551, N'@1', N'admin@EnglishPremierLeague.com', N'System Admin', 1)
+GO
+INSERT [dbo].[PremierLeagueAccount] ([AccID], [Password], [EmailAddress], [Description], [Role]) VALUES (552, N'@1', N'staff@EnglishPremierLeague.com', N'Staff', 2)
+GO
+INSERT [dbo].[PremierLeagueAccount] ([AccID], [Password], [EmailAddress], [Description], [Role]) VALUES (553, N'@1', N'manager@EnglishPremierLeague.com', N'Manager', 3)
+GO
+INSERT [dbo].[PremierLeagueAccount] ([AccID], [Password], [EmailAddress], [Description], [Role]) VALUES (554, N'@1', N'member1@EnglishPremierLeague.com', N'Member', 4)
+GO
+SET ANSI_PADDING ON
+GO
+/****** Object:  Index [UQ__PremierL__49A147401B2C848F]    Script Date: 8/18/2024 10:11:12 AM ******/
+ALTER TABLE [dbo].[PremierLeagueAccount] ADD UNIQUE NONCLUSTERED 
+(
+	[EmailAddress] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[FootballPlayer]  WITH CHECK ADD FOREIGN KEY([FootballClubID])
+REFERENCES [dbo].[FootballClub] ([FootballClubID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+USE [master]
+GO
+ALTER DATABASE [EnglishPremierLeague2024DB] SET  READ_WRITE 
+GO

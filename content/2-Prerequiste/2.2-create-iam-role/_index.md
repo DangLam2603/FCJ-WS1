@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2.2 </b> "
 ---
 
-## Create IAM Role For Elastic Beanstalk
+#### Create IAM Role For Elastic Beanstalk
 1. Navigate to AWS Console and search for IAM 
 ![IAM](/images/2-prerequisite/2.3-setup-iam-roles/(1)-iam.jpg?width=60pc)
 

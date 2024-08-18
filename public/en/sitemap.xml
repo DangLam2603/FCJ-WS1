@@ -2,17 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>1970-01-01T07:33:42+07:00</lastmod>
+    <loc>//localhost:1313/6-codebuild/6.1-add-buildspec-and-profile/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="//localhost:1313/vi/6-codebuild/6.1-add-buildspec-and-profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="//localhost:1313/6-codebuild/6.1-add-buildspec-and-profile/"
+                />
+  </url><url>
+    <loc>//localhost:1313/6-codebuild/6.2--create-codebuild-project/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codebuild/6.2--create-codebuild-project/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codebuild/6.2--create-codebuild-project/"
                 />
   </url><url>
     <loc>//localhost:1313/3-deploy-web-application/3.1-create-environment-ebs/</loc>
@@ -27,6 +38,42 @@
                 href="//localhost:1313/3-deploy-web-application/3.1-create-environment-ebs/"
                 />
   </url><url>
+    <loc>//localhost:1313/7-create-cicd-pipeline/7.1-create-new-pipeline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-create-cicd-pipeline/7.1-create-new-pipeline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-create-cicd-pipeline/7.1-create-new-pipeline/"
+                />
+  </url><url>
+    <loc>//localhost:1313/9-cleanup/9.1-delete-elasticbeanstalk/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/9-cleanup/9.1-delete-elasticbeanstalk/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/9-cleanup/9.1-delete-elasticbeanstalk/"
+                />
+  </url><url>
+    <loc>//localhost:1313/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/"
+                />
+  </url><url>
     <loc>//localhost:1313/1-introduce/1.1-elasticbeanstalk/</loc>
     <xhtml:link
                 rel="alternate"
@@ -39,16 +86,28 @@
                 href="//localhost:1313/1-introduce/1.1-elasticbeanstalk/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-config-rds/4.1-updateiamrole/</loc>
+    <loc>//localhost:1313/4-config-rds/4.1-modify-connection/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-config-rds/4.1-updateiamrole/"
+                href="//localhost:1313/vi/4-config-rds/4.1-modify-connection/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-config-rds/4.1-updateiamrole/"
+                href="//localhost:1313/4-config-rds/4.1-modify-connection/"
+                />
+  </url><url>
+    <loc>//localhost:1313/5-publish-api/5.1-publish-to-elasticbeanstalk/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-publish-api/5.1-publish-to-elasticbeanstalk/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-publish-api/5.1-publish-to-elasticbeanstalk/"
                 />
   </url><url>
     <loc>//localhost:1313/1-introduce/1.2-pipeline/</loc>
@@ -99,16 +158,40 @@
                 href="//localhost:1313/2-prerequiste/2.2-create-iam-role/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-config-rds/4.2-creates3bucket/</loc>
+    <loc>//localhost:1313/7-create-cicd-pipeline/7.2-source-stage/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-config-rds/4.2-creates3bucket/"
+                href="//localhost:1313/vi/7-create-cicd-pipeline/7.2-source-stage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-config-rds/4.2-creates3bucket/"
+                href="//localhost:1313/7-create-cicd-pipeline/7.2-source-stage/"
+                />
+  </url><url>
+    <loc>//localhost:1313/9-cleanup/9.2-delete-code-build/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/9-cleanup/9.2-delete-code-build/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/9-cleanup/9.2-delete-code-build/"
+                />
+  </url><url>
+    <loc>//localhost:1313/5-publish-api/5.2-demo-web-api-success/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-publish-api/5.2-demo-web-api-success/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-publish-api/5.2-demo-web-api-success/"
                 />
   </url><url>
     <loc>//localhost:1313/2-prerequiste/2.3-download-aws-toolkit/</loc>
@@ -135,6 +218,8 @@
                 href="//localhost:1313/1-introduce/"
                 />
   </url><url>
+    <loc>//localhost:1313/4-config-rds/4.2-test-connection/</loc>
+  </url><url>
     <loc>//localhost:1313/2-prerequiste/2.4-add-inbound-rule/</loc>
     <xhtml:link
                 rel="alternate"
@@ -159,16 +244,28 @@
                 href="//localhost:1313/2-prerequiste/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-config-rds/4.3-creategwes3/</loc>
+    <loc>//localhost:1313/7-create-cicd-pipeline/7.3-build-stage/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-config-rds/4.3-creategwes3/"
+                href="//localhost:1313/vi/7-create-cicd-pipeline/7.3-build-stage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-config-rds/4.3-creategwes3/"
+                href="//localhost:1313/7-create-cicd-pipeline/7.3-build-stage/"
+                />
+  </url><url>
+    <loc>//localhost:1313/9-cleanup/9.3-delete-code-pipline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/9-cleanup/9.3-delete-code-pipline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/9-cleanup/9.3-delete-code-pipline/"
                 />
   </url><url>
     <loc>//localhost:1313/3-deploy-web-application/</loc>
@@ -207,41 +304,16 @@
                 href="//localhost:1313/4-config-rds/"
                 />
   </url><url>
-    <loc>//localhost:1313/4-config-rds/4.4-configsessionlogs/</loc>
+    <loc>//localhost:1313/7-create-cicd-pipeline/7.4-deploy-stage/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-config-rds/4.4-configsessionlogs/"
+                href="//localhost:1313/vi/7-create-cicd-pipeline/7.4-deploy-stage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-config-rds/4.4-configsessionlogs/"
-                />
-  </url><url>
-    <loc>//localhost:1313/5-publish-api/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/5-publish-api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/5-publish-api/"
-                />
-  </url><url>
-    <loc>//localhost:1313/6-cleanup/</loc>
-    <lastmod>1970-01-01T07:33:42+07:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-cleanup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-cleanup/"
+                href="//localhost:1313/7-create-cicd-pipeline/7.4-deploy-stage/"
                 />
   </url><url>
     <loc>//localhost:1313/3-deploy-web-application/3.4-create-alb-asg/</loc>
@@ -268,6 +340,42 @@
                 href="//localhost:1313/3-deploy-web-application/3.5-create-environment-variable/"
                 />
   </url><url>
+    <loc>//localhost:1313/7-create-cicd-pipeline/7.5-result/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-create-cicd-pipeline/7.5-result/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-create-cicd-pipeline/7.5-result/"
+                />
+  </url><url>
+    <loc>//localhost:1313/5-publish-api/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-publish-api/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-publish-api/"
+                />
+  </url><url>
+    <loc>//localhost:1313/6-codebuild/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-codebuild/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-codebuild/"
+                />
+  </url><url>
     <loc>//localhost:1313/3-deploy-web-application/3.6-review-settings/</loc>
     <xhtml:link
                 rel="alternate"
@@ -278,6 +386,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/3-deploy-web-application/3.6-review-settings/"
+                />
+  </url><url>
+    <loc>//localhost:1313/7-create-cicd-pipeline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-create-cicd-pipeline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-create-cicd-pipeline/"
                 />
   </url><url>
     <loc>//localhost:1313/3-deploy-web-application/3.7-result/</loc>
@@ -292,28 +412,28 @@
                 href="//localhost:1313/3-deploy-web-application/3.7-result/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-publish-api/5.1-publish-to-elasticbeanstalk/</loc>
+    <loc>//localhost:1313/8-demo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-publish-api/5.1-publish-to-elasticbeanstalk/"
+                href="//localhost:1313/vi/8-demo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-publish-api/5.1-publish-to-elasticbeanstalk/"
+                href="//localhost:1313/8-demo/"
                 />
   </url><url>
-    <loc>//localhost:1313/5-publish-api/5.2-demo-web-api-success/</loc>
+    <loc>//localhost:1313/9-cleanup/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-publish-api/5.2-demo-web-api-success/"
+                href="//localhost:1313/vi/9-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-publish-api/5.2-demo-web-api-success/"
+                href="//localhost:1313/9-cleanup/"
                 />
   </url><url>
     <loc>//localhost:1313/categories/</loc>

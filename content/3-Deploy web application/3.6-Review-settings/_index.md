@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3.6 </b> "
 ---
 
-## Overview 
+#### Overview 
 One last step ahead , before hosting your web to cloud. Let's review all the following,
 
 1. Configure Environment ![config](/images/3-deploy-ebs-application/3.6-review-setting/ebs%20(1).jpg?width=60pc)

@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 2.1 </b> "
 ---
 
-## Step-by-Step
+#### Step-by-Step
 1. Access the folder where you want to store the code.
 2. Open **Command Promt** and type the command **`git clone https://github.com/DangLam2603/ebs-player-management-be.git`**
 ![Git Clone](/images/2-prerequisite/2.1-clone%20code/clone-code-git.jpg?width=40pc) 

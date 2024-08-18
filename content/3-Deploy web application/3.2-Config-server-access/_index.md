@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3.2 </b> "
 ---
 
-## Overview 
+#### Overview 
 In this part, we will use the modified IAM role for EC2 that we create in prerequiste ``` ebs-ec2-webtier-role``` to allow Elastic Beanstalk access.
 
 1. Choose Create and Use the Servce role

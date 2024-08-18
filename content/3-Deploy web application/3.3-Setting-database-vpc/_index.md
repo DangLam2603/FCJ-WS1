@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3.3 </b> "
 ---
 
-## Overview 
+#### Overview 
 Next, we'll configure VPC and create new RDS database to host our SQL Server to cloud.
 
 1. Select the exiting or Create new **Vitural Private Cloud (VPC)**. In this demo, i'll choose the **default VPC**.
