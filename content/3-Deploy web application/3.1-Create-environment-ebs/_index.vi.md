@@ -24,5 +24,5 @@ Bạn có thể chọn **Domain Name** bạn muốn, tuy nhiên nó là *tùy ch
 ![ElasticBeanstalk](/images/3-deploy-ebs-application/3.1-create%20environment%20for%20ebs/(5)-ebs-preset.jpg?width=60pc)
 
 {{% notice info %}}
-Bước này cho phép người dùng thiết lập môi trường của họ một cách hiệu quả dựa trên nhu cầu cụ thể, cho dù lựa chọn một cấu hình **đơn giản với một instance duy nhất** (có thể đủ điều kiện cho tầng miễn phí) hay một cấu hình **khả dụng cao** mạnh mẽ hơn. Trong phần **Application Code**, bạn có thể chọn sử dụng **mã mẫu** để triển khai cơ bản hoặc **tải mã của bạn từ S3** Bucket.
+Bước này cho phép người dùng thiết lập môi trường của họ một cách hiệu quả dựa trên nhu cầu cụ thể, cho dù lựa chọn một cấu hình **đơn giản với một instance duy nhất** (có thể đủ điều kiện cho tầng miễn phí) hay một cấu hình **khả dụng cao** mạnh mẽ hơn. Trong phần **Application Code**, bạn có thể chọn sử dụng **Sample code** để triển khai cơ bản hoặc **tải mã của bạn từ S3** Bucket.
 {{% /notice %}}

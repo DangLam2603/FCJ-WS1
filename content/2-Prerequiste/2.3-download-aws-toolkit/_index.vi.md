@@ -16,5 +16,5 @@ AWS ToolKit là một tiện ích mở rộng cho Microsoft Visual Studio chạy
 - [JetBrains](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/setup-toolkit.html)
 
 2. **Sử dụng tiện ích mở rộng của Visual Studio 2022 IDE**:
-   - Mở Visual Studio 2022 => Extention => chọn **Online** và tìm kiếm **AWS ToolKit** => Cài đặt **AWS ToolKit for Amazon Q**
+   - Mở Visual Studio 2022 => **Extention** => chọn **Online** và tìm kiếm **AWS ToolKit** => Cài đặt **AWS ToolKit for Amazon Q**
    ![extention](/images/2-prerequisite/2.4-download-aws-toolkit/toolkid-download.jpg?width=60pc)

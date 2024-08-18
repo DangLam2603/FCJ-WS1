@@ -1,5 +1,5 @@
 ---
-title : "Tạo Buildspect và Procfile"
+title : "Tạo Buildspec.yml và Procfile"
 date : "`r Sys.Date()`"
 weight : 1
 chapter : false

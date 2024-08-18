@@ -16,7 +16,7 @@ Tiếp theo, chúng ta sẽ cấu hình VPC và tạo cơ sở dữ liệu RDS m
 3. Chọn **database subnets** của bạn và ```enable database```
     ![database](/images/3-deploy-ebs-application/3.3-setting%20database,%20vpc/(3)-ebs-database.jpg?width=60pc)
 4. Chỉnh sửa các thông số sau:
-   - *Engine*: động cơ của cơ sở dữ liệu (trong workshop này, tôi sẽ sử dụng SQL Server)
+   - *Engine*: Engine của cơ sở dữ liệu (trong workshop này, tôi sẽ sử dụng SQL Server)
    - *Engine Version*: phiên bản của cơ sở dữ liệu
    - *Instance class*: loại instance của cơ sở dữ liệu 
    - *Storage*: dung lượng lưu trữ của cơ sở dữ liệu

@@ -1,12 +1,12 @@
 ---
-title : "Sửa Đổi Chuỗi Kết Nối và Quy Tắc Inbound"
+title : "Sửa Đổi Chuỗi Kết Nối và Inbound Rule"
 date : "`r Sys.Date()`"
 weight : 1
 chapter : false
 pre : " <b> 4.1 </b> "
 ---
 
-Để các phiên bản cơ sở dữ liệu của chúng ta hoạt động trong môi trường đám mây AWS, chúng ta cần cập nhật Chuỗi Kết Nối và tạo một quy tắc inbound để kết nối với máy chủ MSSQL cục bộ của chúng ta.
+Để các phiên bản cơ sở dữ liệu của chúng ta hoạt động trong môi trường đám mây AWS, chúng ta cần cập nhật Chuỗi Kết Nối và tạo một inbound rule để kết nối với máy chủ MSSQL cục bộ của chúng ta.
 
 #### Cập Nhật Chuỗi Kết Nối
 

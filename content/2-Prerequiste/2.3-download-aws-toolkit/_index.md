@@ -17,7 +17,7 @@ AWS ToolKit is an extension for Microsoft Visual Studio running on Microsoft Win
   
 
 2. **Using Extention of Visual Studio 2022 IDE**: 
-   - Open Visual Studio 2022 => Extention => choose **Online** and search **AWS ToolKit** => Install **AWS ToolKit for Amazon Q**
+   - Open Visual Studio 2022 => **Extention** => choose **Online** and search **AWS ToolKit** => Install **AWS ToolKit for Amazon Q**
    ![extention](/images/2-prerequisite/2.4-download-aws-toolkit/toolkid-download.jpg?width=60pc)
 
 

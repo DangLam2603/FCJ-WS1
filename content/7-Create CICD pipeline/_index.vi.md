@@ -11,7 +11,7 @@ pre : " <b> 7. </b> "
 
 #### Nội Dung
 - [Tạo Pipeline Mới](7.1-create%20new%20pipeline/)
-- [Tạo Giai Đoạn Nguồn](7.2-source-stage/)
-- [Tạo Giai Đoạn Xây Dựng](7.3-build-stage/)
-- [Tạo Giai Đoạn Triển Khai](7.4-deploy-stage/)
-- [Demos CI/CD Hoạt Động](7.5-result/)
+- [Tạo Giai Đoạn Source](7.2-source-stage/)
+- [Tạo Giai Đoạn Build](7.3-build-stage/)
+- [Tạo Giai Đoạn Deploy](7.4-deploy-stage/)
+- [Demo CI/CD Hoạt Động](7.5-result/)

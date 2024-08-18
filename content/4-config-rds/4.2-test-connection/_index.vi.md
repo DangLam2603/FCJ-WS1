@@ -1,19 +1,19 @@
 ---
-title : "Migration and Test Database Connection"
+title : "Chuyển đổi dữ liệu và Kiểm Tra Kết Nối Cơ Sở Dữ Liệu"
 date : "`r Sys.Date()`"
 weight : 2
 chapter : false
 pre : " <b> 4.2 </b> "
 ---
 
-#### Migration
+#### Chuyển đổi dữ liệu
 {{% notice info %}}
-In this workshop tutorial, I have provided [the script](/databaseScript.txt) for the database. However, you can create any SQL script for future deployments that best fits your needs.
+Trong hướng dẫn workshop này, tôi đã cung cấp [script](/databaseScript.txt) cho cơ sở dữ liệu. Tuy nhiên, bạn có thể tạo bất kỳ script SQL nào cho các lần triển khai trong tương lai phù hợp nhất với nhu cầu của bạn.
 {{% /notice %}}
 
-#### Test Connection
+#### Kiểm Tra Kết Nối
 
-1. Input your RDS server address, Username, and Password as configured in Elastic Beanstalk.
+1. Nhập địa chỉ máy chủ RDS, Tên người dùng và Mật khẩu như đã cấu hình trong Elastic Beanstalk.
    ![rds](/images/4-config-rds/(4)-connect.jpg?width=60pc)
-2. Perform migration and refresh the server.
+2. Thực hiện di chuyển và làm mới máy chủ.
    ![rds](/images/4-config-rds/(5)-result.jpg?width=60pc)
