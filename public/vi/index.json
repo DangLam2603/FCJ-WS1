@@ -1,255 +1,262 @@
 [
 {
+	"uri": "//localhost:1313/vi/5-publish-api/5.1-publish-to-elasticbeanstalk/",
+	"title": "Đưa Lên Elastic Beanstalk",
+	"tags": [],
+	"description": "",
+	"content": "\rĐể xuất bản, hãy đảm bảo rằng IDE của bạn đã được cài đặt AWS ToolKit trong bước chuẩn bị.\nĐiều hướng đến thư mục dự án của bạn, sau đó nhấp chuột phải chọn xuất bản lên AWS Chọn Xuất bản lên Mục tiêu hiện có Chọn Môi trường Elastic Beanstalk mà bạn đã tạo Chọn Xuất bản và sau đó Có Chờ AWS Toolkit xuất bản lên Elastic Beanstalk. Xuất bản thành công "
+},
+{
 	"uri": "//localhost:1313/vi/1-introduce/",
 	"title": "Giới thiệu",
 	"tags": [],
 	"description": "",
-	"content": "Session Manager là một chức năng nằm trong dịch vụ System Manager của AWS, Session Manager cung cấp khả năng quản lý các máy chủ một cách an toàn mà không cần mở port SSH, không cần Bastion Host hoặc quản lý SSH key. Session Manager cũng giúp dễ dàng tuân thủ các chính sách của công ty yêu cầu quyền truy cập có kiểm soát, đảm bảo việc bảo mật nghiêm ngặt và ghi log truy việc truy cập trong khi vẫn cung cấp cho người dùng cuối quyền truy cập đa nền tảng.\nVới việc sử dụng Session Manager, bạn sẽ có được những ưu điểm sau:\nKhông cần phải mở cổng 22 cho giao thức SSH. Có thể cấu hình để kết nối không cần đi ra ngoài internet. Không cần quản lý private key của server để kết nối SSH. Quản lý tập trung được user bằng việc sử dụng AWS IAM. Truy cập tới server một cách dễ dàng và đơn giản bằng một cú click chuột. Thời gian truy cập nhanh chóng hơn các phương thức truyền thống như SSH. Hỗ trợ nhiều hệ điều hành khác nhau như Linux, Windows, MacOS. Log lại được các phiên kết nối và các câu lệnh đã thực thi trong lúc kết nối tới server. Với những ưu điểm trên, bạn có thể sử dụng Session Manager thay vì sử dụng kỹ thuật Bastion host giúp chúng ta tiết kiệm được thời gian và chi phí khi quản lý server Bastion.\n"
-},
-{
-	"uri": "//localhost:1313/vi/",
-	"title": "Session Management",
-	"tags": [],
-	"description": "",
-	"content": "Làm việc với Amazon System Manager - Session Manager Tổng quan Trong bài lab này, bạn sẽ tìm hiểu các khái niệm cơ bản và thực hành về Amazon System Manager - Session Management. Thực hành tạo kết nối đến máy chủ public và máy chủ private trong VPC.\nNội dung Giới thiệu Các bước chuẩn bị Tạo kết nối đến máy chủ EC2 Quản lý session logs Port Forwarding Dọn dẹp tài nguyên "
-},
-{
-	"uri": "//localhost:1313/vi/2-prerequiste/",
-	"title": "Các bước chuẩn bị",
-	"tags": [],
-	"description": "",
-	"content": "\rBạn cần tạo sẵn 1 Linux instance thuộc public subnet và 1 Window instance thuộc private subnet để thực hiện bài thực hành này.\nĐể tìm hiểu cách tạo các EC2 instance và VPC với public/private subnet các bạn có thể tham khảo bài lab :\nGiới thiệu về Amazon EC2 Làm việc với Amazon VPC Để sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho các instance của chúng ta có thể làm việc với System Manager.Trong phần chuẩn bị này, chúng ta cũng sẽ tiến hành tạo IAM Role để cấp quyền cho các instance có thể làm việc với System Manager.\nNội dung Chuẩn bị VPC và EC2 Instance Tạo IAM Role "
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/",
-	"title": "Tạo kết nối đến máy chủ EC2",
-	"tags": [],
-	"description": "",
-	"content": "Trong bước này, chúng ta sẽ thực hiện tạo kết nối đến các máy chủ EC2 của chúng ta, nằm trong cả public và private subnet.\nNội dung 3.1. Tạo Kết nối đến máy chủ EC2 Public 3.2. Tạo Kết nối đến máy chủ EC2 Private\n"
-},
-{
-	"uri": "//localhost:1313/vi/4-config-rds/",
-	"title": "Quản lý session logs",
-	"tags": [],
-	"description": "",
-	"content": "Với Session Manager chúng ta có thể xem được lịch sử các kết nối tới các instance thông qua Session history. Tuy nhiên chúng ta chưa xem được chi tiết các câu lệnh được sử dụng.\nTrong phần này chúng ta sẽ tiến hành tạo S3 bucket và thực hiện cấu hình lưu trữ các session logs để xem được chi tiết các câu lệnh được sử dụng trong session.\nNội dung: Cập nhật IAM Role Tạo S3 Bucket Tạo S3 Gateway endpoint Cấu hình Session logs "
-},
-{
-	"uri": "//localhost:1313/vi/5-publish-api/",
-	"title": "Port Forwarding",
-	"tags": [],
-	"description": "",
-	"content": "\rPort Forwarding là mốt cách thức hữu ích để chuyển hướng lưu lượng mạng từ 1 địa chỉ IP - Port này sang 1 địa chỉ IP - Port khác. Với Port Forwarding chúng ta có thể truy cập một EC2 instance nằm trong private subnet từ máy trạm của chúng ta.\nChúng ta sẽ cấu hình Port Forwarding cho kết nối RDP giữa máy của mình với Private Windows Instance nằm trong private subnet mà chúng ta đã tạo cho bài thực hành này.\nTạo IAM User có quyền kết nối SSM Truy cập vào giao diện quản trị dịch vụ IAM Click Users , sau đó click Add users. Tại trang Add user. Tại mục User name, điền Portfwd. Click chọn Access key - Programmatic access. Click Next: Permissions. Click Attach existing policies directly. Tại ô tìm kiếm , điền ssm. Click chọn AmazonSSMFullAccess. Click Next: Tags, click Next: Reviews. Click Create user. Lưu lại thông tin Access key ID và Secret access key để thực hiện cấu hình AWS CLI. Cài đặt và cấu hình AWS CLI và Session Manager Plugin Để thực hiện phần thực hành này, đảm bảo máy trạm của bạn đã cài AWS CLI và Session Manager Plugin\nBạn có thể tham khảo thêm bài thực hành về cài đặt và cấu hình AWS CLI tại đây.\nVới Windows thì khi giải nén thư mục cài đặt Session Manager Plugin bạn hãy chạy file install.bat với quyền Administrator để thực hiện cài đặt.\nThực hiện Portforwarding Chạy command dưới đây trong Command Prompt trên máy của bạn để cấu hình Port Forwarding. aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region (your region) Thông tin Instance ID của Windows Private Instance có thể tìm được khi bạn xem chi tiết máy chủ EC2 Windows Private Instance.\nCâu lệnh ví dụ C:\\Windows\\system32\u0026gt;aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region ap-southeast-1 Nếu câu lệnh của bạn báo lỗi như dưới đây : SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\nChứng tỏ bạn chưa cài Session Manager Plugin thành công. Bạn có thể cần khởi chạy lại Command Prompt sau khi cài Session Manager Plugin.\nKết nối tới Private Windows Instance bạn đã tạo bằng công cụ Remote Desktop trên máy trạm của bạn. Tại mục Computer: điền localhost:9999. Quay trở lại giao diện quản trị của dịch vụ System Manager - Session Manager. Click tab Session history. Chúng ta sẽ thấy các session logs với tên Document là AWS-StartPortForwardingSession. Chúc mừng bạn đã hoàn tất bài thực hành hướng dẫn cách sử dụng Session Manager để kết nối cũng như lưu trữ các session logs trong S3 bucket. Hãy nhớ thực hiện bước dọn dẹp tài nguyên để tránh sinh chi phí ngoài ý muốn nhé.\n"
+	"content": "Trước tiên, chúng ta hãy cùng đi qua một số định nghĩa về các dịch vụ AWS chính là Elastic Beanstalk và CodePipeline, CodeBuild để hiểu cách tích hợp và phân phối/triển khai liên tục hoạt động như thế nào.\nNội dung Elastic Beanstalk CI/CD sử dụng CodePipeline, CodeBuild "
 },
 {
 	"uri": "//localhost:1313/vi/1-introduce/1.1-elasticbeanstalk/",
-	"title": "",
+	"title": "Giới thiệu về Elastic Beanstalk",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/1-introduce/1.2-pipeline/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/2-prerequiste/2.1-clone-code/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/2-prerequiste/2.2-create-iam-role/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/2-prerequiste/2.3-download-aws-toolkit/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/2-prerequiste/2.4-add-inbound-rule/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/3.1-create-environment-ebs/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/3.2-config-server-access/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/3.3-setting-database-vpc/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/3.4-create-alb-asg/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/3.5-create-environment-variable/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/3.6-review-settings/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/3-deploy-web-application/3.7-result/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Tổng quan Elastic Beanstalk là một dịch vụ hoàn toàn được quản lý bởi Amazon Web Services (AWS) giúp đơn giản hóa việc triển khai và quản lý các ứng dụng. Dịch vụ này cho phép các nhà phát triển nhanh chóng triển khai và quản lý ứng dụng trong các ngôn ngữ như Java, .NET, PHP, Node.js, Python, Ruby, Go, và Docker trên các máy chủ quen thuộc như Apache, Nginx, Passenger, và IIS.\nVới Elastic Beanstalk, bạn chỉ cần tải mã nguồn lên và dịch vụ sẽ tự động xử lý việc triển khai, từ cung cấp tài nguyên, cân bằng tải, và tự động mở rộng đến giám sát sức khỏe ứng dụng. Điều này giúp các nhà phát triển không phải lo lắng về việc quản lý hạ tầng, cho phép họ tập trung vào việc viết mã.\nLợi ích của Elastic Beanstalk\nTriển khai đơn giản: Dễ dàng triển khai ứng dụng mà không cần quản lý hạ tầng. Tự động mở rộng: Tự động mở rộng ứng dụng theo nhu cầu. Giám sát tích hợp: Tích hợp với AWS CloudWatch để giám sát sức khỏe thời gian thực. Hỗ trợ đa ngôn ngữ: Hỗ trợ nhiều ngôn ngữ lập trình và nền tảng. Môi trường tùy chỉnh: Linh hoạt tùy chỉnh môi trường theo yêu cầu. Quản lý phiên bản: Dễ dàng quản lý phiên bản với khả năng khôi phục. Tiết kiệm chi phí: Chỉ trả tiền cho tài nguyên đã sử dụng, không có chi phí bổ sung cho Elastic Beanstalk. Tích hợp với AWS: Tích hợp liền mạch với các dịch vụ khác của AWS. "
 },
 {
 	"uri": "//localhost:1313/vi/4-config-rds/4.1-modify-connection/",
-	"title": "",
+	"title": "Sửa Đổi Chuỗi Kết Nối và Quy Tắc Inbound",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/5-publish-api/5.1-publish-to-elasticbeanstalk/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/5-publish-api/5.2-demo-web-api-success/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Để các phiên bản cơ sở dữ liệu của chúng ta hoạt động trong môi trường đám mây AWS, chúng ta cần cập nhật Chuỗi Kết Nối và tạo một quy tắc inbound để kết nối với máy chủ MSSQL cục bộ của chúng ta.\nCập Nhật Chuỗi Kết Nối Vào thư mục dự án và tìm tệp appsetting.json\nTrong Chuỗi Kết Nối, tìm DefaultConnection Sửa đổi các giá trị Server, uid, pwd sao cho phù hợp với cài đặt cơ sở dữ liệu trong Elastic Beanstalk. Điều hướng đến Cơ sở Dữ Liệu AWS RDS trong Giao Diện AWS Console\nChọn cơ sở dữ liệu để sửa đổi Thêm quy tắc inbound sau Tiếp theo, chúng ta sẽ tiến hành di chuyển và kiểm tra cơ sở dữ liệu của chúng ta đến máy chủ MSSQL cục bộ.\n"
 },
 {
 	"uri": "//localhost:1313/vi/6-codebuild/6.1-add-buildspec-and-profile/",
-	"title": "",
+	"title": "Tạo Buildspect và Procfile",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Tổng Quan Việc tạo buildspec.yml và Procfile.txt là rất quan trọng để tự động hóa và quản lý quá trình xây dựng, triển khai, và cấu hình runtime của ứng dụng của bạn. Mỗi tệp này phục vụ một mục đích riêng trong vòng đời phát triển phần mềm, đặc biệt khi sử dụng các dịch vụ AWS như CodeBuild và Elastic Beanstalk.\nbuildspec.yml: Tệp này định nghĩa quá trình xây dựng cho AWS CodeBuild. Nó bao gồm các giai đoạn như cài đặt phụ thuộc, biên dịch mã nguồn, chạy kiểm tra, và đóng gói ứng dụng. Tùy chỉnh nó bằng cách chỉ định các lệnh xây dựng, biến môi trường và vị trí artifact để phù hợp với nhu cầu dự án của bạn. Procfile: Chủ yếu được sử dụng trên các nền tảng như AWS Elastic Beanstalk, Procfile xác định các lệnh để khởi động các quy trình ứng dụng khác nhau, chẳng hạn như máy chủ web hoặc quy trình worker. Định nghĩa các loại quy trình và các lệnh khởi động tương ứng của chúng để đảm bảo ứng dụng hoạt động chính xác. Sau đó, hãy commit mã nguồn của bạn vào kho lưu trữ trên Github và bắt đầu với CodeBuild.\nTrong thư mục mã nguồn, hai tệp triển khai đã được bao gồm để hỗ trợ quá trình triển khai. Những tệp này rất quan trọng để tự động hóa quá trình xây dựng và triển khai ứng dụng. Tuy nhiên, bạn có thể chọn tạo và chỉnh sửa các tệp này theo yêu cầu hoặc sở thích cụ thể.\n"
 },
 {
 	"uri": "//localhost:1313/vi/6-codebuild/6.2--create-codebuild-project/",
-	"title": "",
+	"title": "Tạo Dự Án CodeBuild",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Tổng Quan AWS CodeBuild là một dịch vụ quản lý tự động hóa việc biên dịch mã nguồn, kiểm tra và tạo artifact. Nó tự động mở rộng và tích hợp với các dịch vụ AWS khác, sử dụng tệp buildspec.yml để cấu hình các lệnh xây dựng và cài đặt.\nTruy cập vào phần CodeBuild trên Giao diện AWS Console Chọn Tạo Dự Án Trong Cấu Hình Dự Án, nhập Tên Dự Án bạn muốn Trong phần Nguồn, chọn Nhà Cung Cấp Nguồn Kết nối với tài khoản Github của bạn Chọn kho lưu trữ từ repo Github của bạn Cấu hình môi trường Trong phần Hệ Điều Hành, chọn hệ điều hành của bạn Để Runtime(s) mặc định là: Standard Runtime Trong phần Hình Ảnh, chọn runtime mới nhất Chọn vai trò dịch vụ mới Nhập tên vai trò Chọn tùy chọn Buildspec để sử dụng tệp buildspec.yml đã cung cấp Nhập Tạo Dự Án Mới Kết quả "
 },
 {
-	"uri": "//localhost:1313/vi/6-codebuild/",
-	"title": "",
+	"uri": "//localhost:1313/vi/3-deploy-web-application/3.1-create-environment-ebs/",
+	"title": "Tạo Môi Trường Elastic Beanstalk Mới",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Tổng quan Trước khi tiến hành thiết lập AWS Elastic Beanstalk, điều quan trọng là phải cấu hình một môi trường mới để đảm bảo quá trình triển khai diễn ra suôn sẻ.\nTruy cập vào AWS Console UI và tìm kiếm Elastic Beanstalk Chọn New Environment Trong phần Environment Information, điền Environment name bạn muốn Bạn có thể chọn Domain Name bạn muốn, tuy nhiên nó là tùy chọn. Đảm bảo rằng bạn kiểm tra tính khả dụng của tên miền.\nSau đó, chọn platform, platform version và branch bạn muốn triển khai, trong hướng dẫn này sẽ sử dụng .NET 6 trên Linux Trong phần Presets, chọn High availability. Bước này cho phép người dùng thiết lập môi trường của họ một cách hiệu quả dựa trên nhu cầu cụ thể, cho dù lựa chọn một cấu hình đơn giản với một instance duy nhất (có thể đủ điều kiện cho tầng miễn phí) hay một cấu hình khả dụng cao mạnh mẽ hơn. Trong phần Application Code, bạn có thể chọn sử dụng mã mẫu để triển khai cơ bản hoặc tải mã của bạn từ S3 Bucket.\n"
 },
 {
 	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.1-create-new-pipeline/",
-	"title": "",
+	"title": "Tạo Pipeline Mới",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Tổng Quan Đầu tiên, chúng ta sẽ tiến hành một cách tiếp cận toàn diện và từng bước để tạo pipeline CI/CD của chúng ta bằng cách sử dụng AWS CodePipeline. Quy trình này bao gồm nhiều giai đoạn quan trọng: bắt đầu với việc tạo pipeline, nơi chúng ta sẽ chỉ định tên pipeline và cấu hình các quyền cần thiết.\nMở AWS Management Console và điều hướng đến CodePipeline. Nhấp vào Create pipeline Cung cấp tên cho pipeline name của bạn. Chọn Next để tiếp tục trang kế tiếp. "
 },
 {
-	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.2-source-stage/",
-	"title": "",
+	"uri": "//localhost:1313/vi/",
+	"title": "Triển khai ứng dụng web API với Elastic Beanstalk và thiết lập CI/CD sử dụng CodePipeline",
 	"tags": [],
 	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.3-build-stage/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.4-deploy-stage/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.5-result/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "//localhost:1313/vi/8-demo/",
-	"title": "",
-	"tags": [],
-	"description": "",
-	"content": ""
+	"content": "Triển khai ứng dụng web API với Elastic Beanstalk và thiết lập CI/CD sử dụng CodePipeline Tổng quan Trong bài thực hành này, chúng ta sẽ triển khai một ứng dụng API hoạt động (ASP.NET 6, Swagger UI) sử dụng AWS Elastic Beanstalk, tương tác với AWS RDS và sau đó thiết lập một pipeline cho quá trình tích hợp liên tục và phân phối/triển khai liên tục với Github và AWS CodePipeline.\n"
 },
 {
 	"uri": "//localhost:1313/vi/9-cleanup/9.1-delete-elasticbeanstalk/",
-	"title": "",
+	"title": "Xóa Elastic Beanstalk",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Dọn Dẹp Elastic Beanstalk Chọn Môi Trường Elastic Beanstalk =\u0026gt; Hành Động =\u0026gt; Kết Thúc Môi Trường Nhập Tên Môi Trường Ebs-player-apis-env để xóa "
+},
+{
+	"uri": "//localhost:1313/vi/3-deploy-web-application/3.2-config-server-access/",
+	"title": "Cấu Hình Quyền Truy Cập Máy Chủ",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Trong phần này, chúng ta sẽ sử dụng IAM role đã chỉnh sửa cho EC2 mà chúng ta đã tạo trong phần điều kiện tiên quyết ebs-ec2-webtier-role để cho phép Elastic Beanstalk truy cập.\nChọn Tạo và Sử dụng role dịch vụ Nhập tên role dịch vụ mới Chọn ebs-ec2-webtier-role "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/",
+	"title": "Chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, chúng ta sẽ thiết lập những điều cần thiết và quan trọng để thực hiện workshop này.\nNội dung Clone Code từ GitHub Tạo IAM Role Tải về AWS ToolKit Thêm Inbound Rule "
+},
+{
+	"uri": "//localhost:1313/vi/1-introduce/1.2-pipeline/",
+	"title": "CI/CD sử dụng AWS CodePipeline và AWS CodeBuild",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan về CI/CD CI/CD là viết tắt của Continuous Integration (Tích hợp liên tục) và Continuous Delivery (Phân phối liên tục) hoặc Continuous Deployment (Triển khai liên tục), một tập hợp các phương pháp được sử dụng trong phát triển phần mềm hiện đại để tự động hóa và tối ưu hóa quá trình xây dựng, kiểm thử và triển khai ứng dụng.\nContinuous Integration (CI): Liên quan đến việc tự động tích hợp các thay đổi mã từ nhiều người đóng góp vào một kho lưu trữ chung nhiều lần trong ngày. Mỗi lần tích hợp được xác minh bằng các bản dựng và kiểm thử tự động, cho phép các nhóm phát hiện vấn đề sớm.\nContinuous Delivery (CD): Mở rộng CI bằng cách tự động triển khai ứng dụng lên môi trường staging hoặc production sau khi bản dựng và kiểm thử thành công. Điều này đảm bảo phần mềm luôn ở trạng thái có thể triển khai.\nAWS CodePipeline là dịch vụ tích hợp liên tục và phân phối liên tục hoàn toàn được quản lý, tự động hóa các bước cần thiết để phát hành phần mềm của bạn. Với CodePipeline, bạn có thể định nghĩa một loạt các giai đoạn như nguồn, xây dựng, kiểm thử và triển khai, được kích hoạt tự động khi phát hiện thay đổi trong kho mã nguồn.\nCác tính năng chính:\nLuồng công việc tự động: Tự động hóa toàn bộ quá trình phát hành từ thay đổi mã nguồn đến triển khai. Tích hợp với dịch vụ AWS: Tích hợp liền mạch với các dịch vụ khác của AWS như CodeBuild, ECS, Lambda, và S3. Đường ống tùy chỉnh: Cho phép bạn tùy chỉnh từng giai đoạn của đường ống, bao gồm sử dụng công cụ của bên thứ ba hoặc script tùy chỉnh. Thực thi song song: Hỗ trợ thực thi song song các hành động để tăng tốc quá trình phát hành. Bảo mật tích hợp: Cung cấp mã hóa và tích hợp với AWS Identity and Access Management (IAM) để kiểm soát truy cập an toàn. AWS CodeBuild là dịch vụ xây dựng hoàn toàn được quản lý, biên dịch mã nguồn, chạy kiểm thử, và tạo ra các gói phần mềm sẵn sàng để triển khai. Nó loại bỏ nhu cầu thiết lập và quản lý máy chủ xây dựng riêng.\nCác tính năng chính:\nKhả năng mở rộng: Tự động mở rộng để xử lý nhiều bản dựng cùng lúc, đảm bảo thời gian xây dựng nhanh chóng và đáng tin cậy. Môi trường xây dựng tùy chỉnh: Cho phép bạn định nghĩa môi trường xây dựng riêng sử dụng các hình ảnh Docker, làm cho nó linh hoạt với các ngôn ngữ lập trình và công cụ khác nhau. Tích hợp với đường ống CI/CD: Dễ dàng tích hợp với AWS CodePipeline và các công cụ CI/CD khác để tự động hóa quá trình xây dựng như một phần của đường ống triển khai. Giá cả theo sử dụng: Chỉ tính phí cho tài nguyên tính toán bạn sử dụng trong quá trình xây dựng, giúp tiết kiệm chi phí. "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.1-clone-code/",
+	"title": "Clone Code từ Github",
+	"tags": [],
+	"description": "",
+	"content": "Các bước thực hiện Truy cập vào thư mục nơi bạn muốn lưu mã nguồn. Mở Command Prompt và nhập lệnh git clone https://github.com/DangLam2603/ebs-player-management-be.git Sau khi clone mã nguồn thành công, mở thư mục sau Bạn sẽ thấy cấu trúc mã nguồn để bắt đầu làm việc mã nguồn chạy trên runtime dotnet 6, vì vậy bạn sẽ cần cài đặt SDK sau NET 6 SDK\n"
+},
+{
+	"uri": "//localhost:1313/vi/5-publish-api/5.2-demo-web-api-success/",
+	"title": "Demo Và Kiểm Tra APIs",
+	"tags": [],
+	"description": "",
+	"content": "\rĐể xác thực việc triển khai các API của chúng ta, hãy bắt đầu bằng cách lấy URL liên kết với miền Elastic Beanstalk của chúng ta. API sử dụng Swagger UI cho tài liệu và tương tác với các điểm cuối. Để truy cập danh sách đầy đủ các điểm cuối có sẵn, hãy thêm ../swagger/index.html vào URL cơ bản của miền.\nSao chép và dán URL miền ebs-player-apis-dev.ap-southeast-1.elasticbeanstalk.com/swagger/index.html Triển khai thành công và kiểm tra các API hoạt động với cơ sở dữ liệu RDS đã được lưu trữ. API của bạn hiện đã được lưu trữ trên đám mây AWS sử dụng môi trường Elastic Beanstalk, với cơ sở dữ liệu RDS được tích hợp đầy đủ. Bạn có thể truy cập API và phát triển một ứng dụng web hoàn chỉnh cho backend của bạn, tất cả được triển khai liền mạch trên đám mây AWS với hỗ trợ cơ sở dữ liệu mạnh mẽ từ Amazon RDS.\n"
+},
+{
+	"uri": "//localhost:1313/vi/4-config-rds/4.2-test-connection/",
+	"title": "Migration and Test Database Connection",
+	"tags": [],
+	"description": "",
+	"content": "Migration In this workshop tutorial, I have provided the script for the database. However, you can create any SQL script for future deployments that best fits your needs.\nTest Connection Input your RDS server address, Username, and Password as configured in Elastic Beanstalk. Perform migration and refresh the server. "
+},
+{
+	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.2-source-stage/",
+	"title": "Tạo Giai Đoạn Nguồn",
+	"tags": [],
+	"description": "",
+	"content": "Tổng Quan Tiếp theo, để tích hợp GitHub với AWS CodePipeline, bạn sẽ kết nối kho mã GitHub của bạn như là nguồn trong cấu hình pipeline.\nChọn Nhà Cung Cấp Nguồn Ủy quyền cho CodePipeline để truy cập vào tài khoản GitHub của bạn Chọn kho mã và nhánh để theo dõi "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.2-create-iam-role/",
+	"title": "Tạo IAM Role",
+	"tags": [],
+	"description": "",
+	"content": "Tạo IAM Role cho Elastic Beanstalk Điều hướng đến AWS Console và tìm kiếm IAM Chọn Role từ thanh bên trái và chọn Create role Chọn Trusted Service Chọn EC2 Thêm quyền sau AWSElasticBeanstalkWebTier Nhập Tên Role Chọn Create Role "
 },
 {
 	"uri": "//localhost:1313/vi/9-cleanup/9.2-delete-code-build/",
-	"title": "",
+	"title": "Xóa Dự Án CodeBuild",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Dọn Dẹp Dự Án CodeBuild Chọn Dự Án CodeBuild =\u0026gt; Hành Động =\u0026gt; Xóa Để xác nhận việc xóa, nhập delete để xóa Xóa thành công "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.3-download-aws-toolkit/",
+	"title": "Cài đặt AWS ToolKit cho Visual Studio",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan AWS ToolKit là một tiện ích mở rộng cho Microsoft Visual Studio chạy trên Microsoft Windows, giúp các nhà phát triển dễ dàng phát triển, gỡ lỗi và triển khai các ứng dụng .NET bằng Amazon Web Services. Bạn có thể chọn một trong các bước sau để cài đặt:\nSử dụng liên kết tải xuống trực tiếp: bạn có thể theo liên kết này để cài đặt phù hợp với IDE .NET của bạn. Visual Studio Visual Studio Code JetBrains Sử dụng tiện ích mở rộng của Visual Studio 2022 IDE: Mở Visual Studio 2022 =\u0026gt; Extention =\u0026gt; chọn Online và tìm kiếm AWS ToolKit =\u0026gt; Cài đặt AWS ToolKit for Amazon Q "
+},
+{
+	"uri": "//localhost:1313/vi/3-deploy-web-application/3.3-setting-database-vpc/",
+	"title": "Cấu Hình VPC và Cơ Sở Dữ Liệu",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Tiếp theo, chúng ta sẽ cấu hình VPC và tạo cơ sở dữ liệu RDS mới để lưu trữ SQL Server trên đám mây.\nChọn Virtual Private Cloud (VPC) hiện có hoặc Tạo mới. Trong bản demo này, tôi sẽ chọn default VPC. Chọn Availability Zone mà bạn muốn chạy ứng dụng của mình. Chọn database subnets của bạn và enable database Chỉnh sửa các thông số sau:\nEngine: động cơ của cơ sở dữ liệu (trong workshop này, tôi sẽ sử dụng SQL Server) Engine Version: phiên bản của cơ sở dữ liệu Instance class: loại instance của cơ sở dữ liệu Storage: dung lượng lưu trữ của cơ sở dữ liệu Username: tên người dùng của cơ sở dữ liệu (khóa để kết nối đến cơ sở dữ liệu) Password: mật khẩu của cơ sở dữ liệu (khóa để kết nối đến cơ sở dữ liệu) Nhấn Next "
+},
+{
+	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.3-build-stage/",
+	"title": "Tạo Giai Đoạn Xây Dựng",
+	"tags": [],
+	"description": "",
+	"content": "Tổng Quan Trong giai đoạn xây dựng của AWS CodePipeline, bạn sẽ cấu hình quy trình biên dịch mã nguồn, chạy các bài kiểm tra và đóng gói ứng dụng. Giai đoạn này thường liên quan đến việc tích hợp với AWS CodeBuild hoặc một dịch vụ xây dựng khác.\nCài đặt Nhà Cung Cấp Xây Dựng sử dụng dự án CodeBuild hiện có. Chọn Dự án CodeBuild hoặc bạn có thể tạo một dự án mới. "
+},
+{
+	"uri": "//localhost:1313/vi/3-deploy-web-application/",
+	"title": "Triển Khai Ứng Dụng Web Với Elastic Beanstalk",
+	"tags": [],
+	"description": "",
+	"content": "Sau khi đã thiết lập các yêu cầu cần thiết, chúng ta sẽ tiến hành triển khai API web của mình lên đám mây bằng cách sử dụng AWS Elastic Beanstalk. Trong bước này, chúng ta sẽ tạo một môi trường Elastic Beanstalk để triển khai và kết nối thông qua AWS ToolKit để tải mã nguồn từ GitHub lên.\nNội dung Tạo Môi Trường Elastic Beanstalk Cấu Hình Quyền Truy Cập Máy Chủ Cấu Hình Cơ Sở Dữ Liệu, VPC Cấu Hình Lưu Lượng và Tự Động Mở Rộng Tạo Biến Môi Trường Xem Xét Các Cài Đặt Kiểm Tra Ứng Dụng "
 },
 {
 	"uri": "//localhost:1313/vi/9-cleanup/9.3-delete-code-pipline/",
-	"title": "",
+	"title": "Xóa CodePipeline",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Dọn Dẹp CodePipeline Chọn pipeline CodePipeline =\u0026gt; Xóa Pipeline Để xác nhận việc xóa, nhập delete để xóa Xóa thành công "
+},
+{
+	"uri": "//localhost:1313/vi/4-config-rds/",
+	"title": "Cấu Hình Kết Nối Cơ Sở Dữ Liệu RDS",
+	"tags": [],
+	"description": "",
+	"content": "Hãy cùng tìm hiểu cách kết nối đến cơ sở dữ liệu RDS đã triển khai từ máy chủ MSSQL cục bộ của bạn.\nNội Dung: Chỉnh Sửa Chuỗi Kết Nối và Quy Tắc Inbound Kiểm Tra Kết Nối Cơ Sở Dữ Liệu "
+},
+{
+	"uri": "//localhost:1313/vi/2-prerequiste/2.4-add-inbound-rule/",
+	"title": "Chỉnh sửa Inbound Rule",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Truy cập vào AWS Console, tìm kiếm dịch vụ EC2 và chọn Security Group. Chọn và chỉnh sửa Security Group của bạn. Chọn Edit Inbound Rule Thêm Rule =\u0026gt; Chọn loại MSSQL =\u0026gt; Lưu Rule Trong workshop này, chúng ta sẽ sử dụng MSSQL triển khai lên RDS Database. Bạn có thể chọn loại cơ sở dữ liệu khác bằng cách chỉnh sửa phạm vi cổng để phù hợp với cổng của cơ sở dữ liệu.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-deploy-web-application/3.4-create-alb-asg/",
+	"title": "Tạo Cân Bằng Tải và Nhóm Tự Động Mở Rộng",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Để tăng cường khả năng mở rộng, tính sẵn sàng và khả năng chịu lỗi của ứng dụng, bạn có thể xem xét việc tích hợp Nhóm Tự Động Mở Rộng (ASG) và Cân Bằng Tải. Những thành phần này đặc biệt có lợi cho các ứng dụng yêu cầu tính sẵn sàng cao và khả năng xử lý mức độ lưu lượng khác nhau.\nChọn Nhóm Bảo Mật Mặc Định cho EC2 của bạn Cài đặt Dung Lượng cho Nhóm Tự Động Mở Rộng Chọn Cài Đặt Mạng Cân Bằng Tải Chọn Loại Cân Bằng Tải Chọn Loại Instance "
+},
+{
+	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.4-deploy-stage/",
+	"title": "Tạo Giai Đoạn Triển Khai",
+	"tags": [],
+	"description": "",
+	"content": "Tổng Quan Trong giai đoạn triển khai của AWS CodePipeline, bạn thiết lập quy trình để triển khai ứng dụng đã được xây dựng đến môi trường đã chỉ định. Trong workshop này, chúng ta sẽ tích hợp với việc triển khai lên AWS Elastic Beanstalk.\nChọn nguồn cho Nhà Cung Cấp Triển Khai Chỉnh sửa các thông tin sau: Khu Vực: khu vực cụ thể của vùng triển khai của bạn Chọn Tên Ứng Dụng của Elastic Beanstalk Chọn Tên Môi Trường của Elastic Beanstalk Xem lại các bước sau và chọn Tạo Pipeline "
+},
+{
+	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/7.5-result/",
+	"title": "Demo Pipeline Thành Công",
+	"tags": [],
+	"description": "",
+	"content": "Tổng Quan Với pipeline của bạn đã được cấu hình và sẵn sàng để chạy, điều quan trọng là xem xét cấu hình để đảm bảo mọi thứ hoạt động chính xác.\nGiai Đoạn Nguồn Giai Đoạn Xây Dựng Giai Đoạn Triển Khai "
+},
+{
+	"uri": "//localhost:1313/vi/3-deploy-web-application/3.5-create-environment-variable/",
+	"title": "Thêm Biến Môi Trường",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Các bước dưới đây cho phép bạn thêm biến môi trường vào Elastic Beanstalk để đảm bảo bảo mật.\nKích hoạt CloudWatch Logs cho Elastic Beanstalk là một bước thiết yếu để giám sát và khắc phục sự cố ứng dụng của bạn. Đặt các biến môi trường sau để cấu hình hành vi ghi log. ASPNETCORE_ENVIRONMENT = Development (chỉ định môi trường phát triển trên .NET Core) ConnectionString__DefaultConnection = \u0026quot;Your Connection String\u0026quot; (thêm kết nối tới cơ sở dữ liệu RDS của bạn) "
+},
+{
+	"uri": "//localhost:1313/vi/5-publish-api/",
+	"title": "Xuất Bản Mã Lên Elastic Beanstalk",
+	"tags": [],
+	"description": "",
+	"content": "Đến bước cuối cùng, chúng ta sẽ tải mã của mình lên Môi trường Elastic Beanstalk với sự hỗ trợ của AWS Toolkit trong Visual Studio\nNội dung Xuất Bản Lên Elastic Beanstalk Demo Và Kiểm Tra API "
+},
+{
+	"uri": "//localhost:1313/vi/6-codebuild/",
+	"title": "Tạo Dự Án CodeBuild",
+	"tags": [],
+	"description": "",
+	"content": "Tổng Quan Trước khi tích hợp ứng dụng của bạn với AWS CodePipeline để thực hiện tích hợp liên tục và triển khai liên tục (CI/CD), điều quan trọng là đảm bảo rằng dự án CodeBuild của bạn được cấu hình và tối ưu hóa đúng cách. CodeBuild là một dịch vụ xây dựng hoàn toàn quản lý, thực hiện biên dịch mã nguồn, chạy các bài kiểm tra và tạo ra các gói phần mềm sẵn sàng để triển khai.\nNội Dung Tạo Buildspec.yml và Procfile.txt Tạo Dự Án CodeBuild "
+},
+{
+	"uri": "//localhost:1313/vi/3-deploy-web-application/3.6-review-settings/",
+	"title": "Xem Lại Tất Cả Cài Đặt",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Một bước cuối cùng trước khi triển khai web của bạn lên đám mây. Hãy xem lại tất cả các cài đặt sau đây,\nCấu hình Môi Trường Cấu hình Quyền Truy Cập Dịch Vụ Cài Đặt Mạng, Cơ Sở Dữ Liệu Cấu Hình Lưu Lượng và Tự Động Mở Rộng Gửi và Triển Khai "
+},
+{
+	"uri": "//localhost:1313/vi/3-deploy-web-application/3.7-result/",
+	"title": "Kiểm Tra Ứng Dụng Của Bạn",
+	"tags": [],
+	"description": "",
+	"content": "Tổng quan Trong phần này, chúng ta sẽ kiểm tra trang web của bạn và xác nhận rằng việc triển khai đã hoạt động.\nViệc triển khai ứng dụng trên Elastic Beanstalk đôi khi có thể mất vài phút để bắt đầu, đặc biệt là đối với các ứng dụng phức tạp hoặc môi trường với nhiều cấu hình.\nMôi trường đã được khởi chạy, hãy kiểm tra URL hoạt động. Triển khai Thành Công "
+},
+{
+	"uri": "//localhost:1313/vi/7-create-cicd-pipeline/",
+	"title": "Thiết Lập CI/CD với CodePipeline",
+	"tags": [],
+	"description": "",
+	"content": "Tổng Quan Để đơn giản hóa việc triển khai API web, chúng ta sẽ thiết lập một pipeline CI/CD với AWS CodePipeline. Điều này tự động hóa quy trình xây dựng, kiểm tra và triển khai, tích hợp với CodeBuild và Elastic Beanstalk. Tự động hóa nâng cao hiệu quả, giảm lỗi và tăng tốc độ giao hàng tính năng.\nNội Dung Tạo Pipeline Mới Tạo Giai Đoạn Nguồn Tạo Giai Đoạn Xây Dựng Tạo Giai Đoạn Triển Khai Demos CI/CD Hoạt Động "
+},
+{
+	"uri": "//localhost:1313/vi/8-demo/",
+	"title": "Demo Quy Trình CI/CD",
+	"tags": [],
+	"description": "",
+	"content": "Tổng Quan Bây giờ, hãy cùng demo quy trình tích hợp liên tục và giao hàng liên tục, tự động hóa quy trình từ việc cam kết mã nguồn đến triển khai. Khi một nhà phát triển cam kết mã nguồn vào kho GitHub, AWS CodePipeline phát hiện sự thay đổi và kích hoạt pipeline.\nCam kết thay đổi mới vào Kho Github CodePipeline tự động phát hiện các thay đổi mới nhất Triển khai điểm cuối API mới thành công "
 },
 {
 	"uri": "//localhost:1313/vi/9-cleanup/",
-	"title": "",
+	"title": "Dọn Dẹp Tài Nguyên",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Tổng Quan Để thực hiện việc dọn dẹp tài nguyên AWS, xác định các tài nguyên AWS liên quan đến pipeline CI/CD của bạn, chẳng hạn như CodePipeline, dự án CodeBuild, và môi trường Elastic Beanstalk.\nNội Dung Xóa Elastic Beanstalk Xóa Code Build Xóa CodePipeline "
 },
 {
 	"uri": "//localhost:1313/vi/categories/",
